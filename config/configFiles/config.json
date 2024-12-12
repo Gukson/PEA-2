@@ -1,0 +1,22 @@
+{
+  "files": [
+    {
+      "file_name": "11nodes.txt"
+    }
+  ],
+  "algorithms":
+  {
+    "Bruteforce": false,
+    "Nearest-neighbour": false,
+    "Random": false,
+    "DFS": true,
+    "BFS": true,
+    "LCFS": true
+  },
+  "max_time": 1,
+  "repetitions_per_instance": 1,
+  "output_file": "zajecia.txt",
+  "progress_bar": true,
+  "show_nodes_in_console": false,
+  "measurement_results_in_the_console" : true
+}

@@ -1,0 +1,1175 @@
+Plik: async4nodes.txt
+BruteForce
+Średni czas;0.000283881
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 120
+Ścieżka z powyższym wynikiem: 0 2 3 1 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000283881;0;0
+
+NearestNeighbour
+Średni czas;9.7383e-05
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 120
+Ścieżka z powyższym wynikiem: 1 0 2 3 1 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;9.7383e-05;0;0
+
+RandomNeighbour
+Średni czas;0.000160414
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 120
+Ścieżka z powyższym wynikiem: 1 0 2 3 1 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000160414;0;0
+
+DFS
+Średni czas;0.000222788
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 120
+Ścieżka z powyższym wynikiem: 0 2 3 1 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000222788;0;0
+
+BFS
+Średni czas;0.000382855
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 120
+Ścieżka z powyższym wynikiem: 0 2 3 1 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000382855;0;0
+
+LCFS
+Średni czas;0.000346219
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 120
+Ścieżka z powyższym wynikiem: 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000346219;0;0
+
+Plik: async5nodes.txt
+BruteForce
+Średni czas;0.000746068
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 200
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000746068;0;0
+
+NearestNeighbour
+Średni czas;9.6781e-05
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 200
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;9.6781e-05;0;0
+
+RandomNeighbour
+Średni czas;0.000360707
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 200
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000360707;0;0
+
+DFS
+Średni czas;0.000862512
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 200
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000862512;0;0
+
+BFS
+Średni czas;0.00154986
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 200
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.00154986;0;0
+
+LCFS
+Średni czas;0.00197809
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 200
+Ścieżka z powyższym wynikiem: 0 3 1 2 4 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.00197809;0;0
+
+Plik: async6nodes.txt
+BruteForce
+Średni czas;0.00687506
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 355
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.00687506;0;0
+
+NearestNeighbour
+Średni czas;0.000187995
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 355
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000187995;0;0
+
+RandomNeighbour
+Średni czas;0.00532325
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 355
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.00532325;0;0
+
+DFS
+Średni czas;0.00613267
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 355
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.00613267;0;0
+
+BFS
+Średni czas;0.0100766
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 355
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.0100766;0;0
+
+LCFS
+Średni czas;0.0139413
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 355
+Ścieżka z powyższym wynikiem: 3 0 5 2 1 4 3 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.0139413;0;0
+
+Plik: async7nodes.txt
+BruteForce
+Średni czas;0.0395178
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 580
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.0395178;0;0
+
+NearestNeighbour
+Średni czas;0.000176781
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 580
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000176781;0;0
+
+RandomNeighbour
+Średni czas;0.148498
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 580
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.148498;0;0
+
+DFS
+Średni czas;0.0291294
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 580
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.0291294;0;0
+
+BFS
+Średni czas;0.0596189
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 580
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.0596189;0;0
+
+LCFS
+Średni czas;0.0733502
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 580
+Ścieżka z powyższym wynikiem: 5 6 0 1 3 2 4 5 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.0733502;0;0
+
+Plik: async8nodes.txt
+BruteForce
+Średni czas;0.279828
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 925
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.279828;0;0
+
+NearestNeighbour
+Średni czas;0.000253739
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 925
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000253739;0;0
+
+RandomNeighbour
+Średni czas;8.28087
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 925
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;8.28087;0;0
+
+DFS
+Średni czas;0.229833
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 925
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.229833;0;0
+
+BFS
+Średni czas;0.460663
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 925
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.460663;0;0
+
+LCFS
+Średni czas;0.578495
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 925
+Ścieżka z powyższym wynikiem: 7 5 0 4 3 1 2 6 7 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.578495;0;0
+
+Plik: async9nodes.txt
+BruteForce
+Średni czas;2.61744
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 1375
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 8 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;2.61744;0;0
+
+NearestNeighbour
+Średni czas;0.000302543
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 1375
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 8 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000302543;0;0
+
+RandomNeighbour
+Średni czas;681.761
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 1375
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 8 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;681.761;0;0
+
+DFS
+Średni czas;2.51039
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 1375
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 8 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;2.51039;0;0
+
+BFS
+Średni czas;4.73447
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 1375
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 8 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;4.73447;0;0
+
+LCFS
+Średni czas;5.53696
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 1375
+Ścieżka z powyższym wynikiem: 7 0 2 4 5 3 1 6 8 7 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;5.53696;0;0
+
+Plik: async10nodes.txt
+BruteForce
+Średni czas;31.532
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 1985
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 8 9 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;31.532;0;0
+
+NearestNeighbour
+Średni czas;0.000382976
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 1985
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 8 9 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000382976;0;0
+
+RandomNeighbour
+Przekroczono limit 30minut!
+Średni czas;1800.6
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 1985
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 8 9 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;1800.6;0;0
+
+DFS
+Średni czas;23.0378
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 1985
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 8 9 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;23.0378;0;0
+
+BFS
+Średni czas;45.4991
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 1985
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 8 9 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;45.4991;0;0
+
+LCFS
+Średni czas;48.4109
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 1985
+Ścieżka z powyższym wynikiem: 8 0 2 1 3 5 7 4 6 9 8 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;48.4109;0;0
+
+Plik: async11nodes.txt
+BruteForce
+Średni czas;320.336
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 2775
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 8 9 10 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;320.336;0;0
+
+NearestNeighbour
+Średni czas;0.000681896
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 2775
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 8 9 10 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000681896;0;0
+
+RandomNeighbour
+Przekroczono limit 30minut!
+Średni czas;2005.52
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 2775
+Ścieżka z powyższym wynikiem: 0 1 2 3 4 5 6 7 8 9 10 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;2005.52;0;0
+
+DFS
+Przekroczono limit 30minut!
+Średni czas;1800
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 2775
+Ścieżka z powyższym wynikiem: 1 2 3 4 5 6 7 8 9 10 0 1 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;1800;0;0
+
+BFS
+Przekroczono limit 30minut!
+Średni czas;2596.31
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 2775
+Ścieżka z powyższym wynikiem: 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;2596.31;0;0
+
+LCFS
+Przekroczono limit 30minut!
+Średni czas;2160.39
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 2775
+Ścieżka z powyższym wynikiem: 1 4 8 3 2 7 6 5 10 0 9 1 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;2160.39;0;0
+
+Plik: 4nodes.txt
+BruteForce
+Średni czas;0.000251196
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 140
+Ścieżka z powyższym wynikiem: 0 3 2 1 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000251196;0;0
+
+NearestNeighbour
+Średni czas;0.000113122
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 140
+Ścieżka z powyższym wynikiem: 0 1 2 3 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000113122;0;0
+
+RandomNeighbour
+Średni czas;0.000133766
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 140
+Ścieżka z powyższym wynikiem: 0 1 2 3 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000133766;0;0
+
+DFS
+Średni czas;0.000240763
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 140
+Ścieżka z powyższym wynikiem: 0 3 2 1 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000240763;0;0
+
+BFS
+Średni czas;0.000374941
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 140
+Ścieżka z powyższym wynikiem: 0 1 2 3 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000374941;0;0
+
+LCFS
+Średni czas;0.000389796
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 140
+Ścieżka z powyższym wynikiem: 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000389796;0;0
+
+Plik: 5nodes.txt
+BruteForce
+Średni czas;0.000693049
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 26
+Ścieżka z powyższym wynikiem: 0 4 2 3 1 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000693049;0;0
+
+NearestNeighbour
+Średni czas;8.0534e-05
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 26
+Ścieżka z powyższym wynikiem: 1 0 4 2 3 1 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;8.0534e-05;0;0
+
+RandomNeighbour
+Średni czas;0.000351409
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 26
+Ścieżka z powyższym wynikiem: 1 0 4 2 3 1 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000351409;0;0
+
+DFS
+Średni czas;0.000743421
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 26
+Ścieżka z powyższym wynikiem: 0 4 2 3 1 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000743421;0;0
+
+BFS
+Średni czas;0.00191593
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 26
+Ścieżka z powyższym wynikiem: 0 4 2 3 1 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.00191593;0;0
+
+LCFS
+Średni czas;0.00180885
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 26
+Ścieżka z powyższym wynikiem: 0 1 3 4 2 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.00180885;0;0
+
+Plik: 6nodes.txt
+BruteForce
+Średni czas;0.00487988
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 118
+Ścieżka z powyższym wynikiem: 0 4 5 3 1 2 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.00487988;0;0
+
+NearestNeighbour
+Średni czas;0.000152216
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 118
+Ścieżka z powyższym wynikiem: 3 1 2 0 4 5 3 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000152216;0;0
+
+RandomNeighbour
+Średni czas;0.00587022
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 118
+Ścieżka z powyższym wynikiem: 3 1 2 0 4 5 3 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.00587022;0;0
+
+DFS
+Średni czas;0.0038123
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 118
+Ścieżka z powyższym wynikiem: 0 4 2 3 1 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.0038123;0;0
+
+BFS
+Średni czas;0.00912399
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 118
+Ścieżka z powyższym wynikiem: 0 4 5 3 1 2 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.00912399;0;0
+
+LCFS
+Średni czas;0.0133447
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 118
+Ścieżka z powyższym wynikiem: 2 3 4 0 5 1 2 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.0133447;0;0
+
+Plik: 7nodes.txt
+BruteForce
+Średni czas;0.035576
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 90
+Ścieżka z powyższym wynikiem: 0 2 5 4 3 6 1 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.035576;0;0
+
+NearestNeighbour
+Średni czas;0.000191429
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 90
+Ścieżka z powyższym wynikiem: 3 6 1 0 2 4 5 3 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000191429;0;0
+
+RandomNeighbour
+Średni czas;0.138825
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 90
+Ścieżka z powyższym wynikiem: 3 6 1 0 2 4 5 3 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.138825;0;0
+
+DFS
+Średni czas;0.0176224
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 90
+Ścieżka z powyższym wynikiem: 0 2 5 4 3 6 1 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.0176224;0;0
+
+BFS
+Średni czas;0.0295073
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 90
+Ścieżka z powyższym wynikiem: 0 1 6 3 5 4 2 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.0295073;0;0
+
+LCFS
+Średni czas;0.0294263
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 90
+Ścieżka z powyższym wynikiem: 0 1 6 3 5 4 2 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.0294263;0;0
+
+Plik: 8nodes.txt
+BruteForce
+Średni czas;0.28032
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 115
+Ścieżka z powyższym wynikiem: 0 6 5 3 4 7 2 1 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.28032;0;0
+
+NearestNeighbour
+Średni czas;0.000278356
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 115
+Ścieżka z powyższym wynikiem: 3 5 6 0 1 2 7 4 3 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000278356;0;0
+
+RandomNeighbour
+Średni czas;7.92129
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 115
+Ścieżka z powyższym wynikiem: 3 5 6 0 1 2 7 4 3 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;7.92129;0;0
+
+DFS
+Średni czas;0.0954365
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 115
+Ścieżka z powyższym wynikiem: 0 6 5 3 4 7 2 1 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.0954365;0;0
+
+BFS
+Średni czas;0.179579
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 115
+Ścieżka z powyższym wynikiem: 0 6 5 3 4 7 2 1 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.179579;0;0
+
+LCFS
+Średni czas;0.163282
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 115
+Ścieżka z powyższym wynikiem: 0 6 5 3 4 2 7 1 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.163282;0;0
+
+Plik: 9nodes.txt
+BruteForce
+Średni czas;2.44198
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 105
+Ścieżka z powyższym wynikiem: 0 8 5 1 4 7 3 6 2 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;2.44198;0;0
+
+NearestNeighbour
+Średni czas;0.000335374
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 105
+Ścieżka z powyższym wynikiem: 3 6 2 0 8 5 1 4 7 3 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000335374;0;0
+
+RandomNeighbour
+Średni czas;576.084
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 105
+Ścieżka z powyższym wynikiem: 3 6 2 0 8 5 1 4 7 3 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;576.084;0;0
+
+DFS
+Średni czas;0.337121
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 105
+Ścieżka z powyższym wynikiem: 0 8 5 1 4 7 3 6 2 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.337121;0;0
+
+BFS
+Średni czas;0.484255
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 105
+Ścieżka z powyższym wynikiem: 0 8 5 1 4 7 3 6 2 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.484255;0;0
+
+LCFS
+Średni czas;0.448312
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 105
+Ścieżka z powyższym wynikiem: 0 8 5 1 4 7 3 6 2 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.448312;0;0
+
+Plik: 10nodes.txt
+BruteForce
+Średni czas;25.5103
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 212
+Ścieżka z powyższym wynikiem: 0 5 1 9 6 7 8 2 4 3 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;25.5103;0;0
+
+NearestNeighbour
+Średni czas;0.000432845
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 212
+Ścieżka z powyższym wynikiem: 1 9 6 7 8 4 2 3 0 5 1 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000432845;0;0
+
+RandomNeighbour
+Przekroczono limit 30minut!
+Średni czas;1800.69
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 212
+Ścieżka z powyższym wynikiem: 1 9 6 7 8 4 2 3 0 5 1 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;1800.69;0;0
+
+DFS
+Średni czas;1.30676
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 212
+Ścieżka z powyższym wynikiem: 0 5 1 9 6 7 8 2 4 3 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;1.30676;0;0
+
+BFS
+Średni czas;2.47104
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 212
+Ścieżka z powyższym wynikiem: 0 3 4 2 8 7 6 9 1 5 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;2.47104;0;0
+
+LCFS
+Średni czas;1.44276
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 212
+Ścieżka z powyższym wynikiem: 5 4 1 9 6 7 8 2 3 0 5 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;1.44276;0;0
+
+Plik: 11nodes.txt
+BruteForce
+Średni czas;332.688
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 186
+Ścieżka z powyższym wynikiem: 0 7 4 8 5 10 9 6 1 2 3 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;332.688;0;0
+
+NearestNeighbour
+Średni czas;0.000541096
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 186
+Ścieżka z powyższym wynikiem: 2 1 6 0 7 4 8 5 10 9 3 2 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000541096;0;0
+
+RandomNeighbour
+Przekroczono limit 30minut!
+Średni czas;1809.74
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 186
+Ścieżka z powyższym wynikiem: 2 1 6 0 7 4 8 5 10 9 3 2 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;1809.74;0;0
+
+DFS
+Średni czas;124.161
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 186
+Ścieżka z powyższym wynikiem: 0 7 4 8 5 10 9 6 1 2 3 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;124.161;0;0
+
+BFS
+Średni czas;252.633
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 186
+Ścieżka z powyższym wynikiem: 0 7 4 8 5 10 9 6 1 2 3 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;252.633;0;0
+
+LCFS
+Średni czas;253.851
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 186
+Ścieżka z powyższym wynikiem: 9 10 5 8 3 2 0 7 4 6 1 9 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;253.851;0;0
+
