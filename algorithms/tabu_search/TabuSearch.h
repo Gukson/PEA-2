@@ -16,8 +16,6 @@ using namespace std;
 
 class TabuSearch : public AlgoFrame {
 public:
-
-
     vector<int> best_way;
     int cost;
     int iterations;

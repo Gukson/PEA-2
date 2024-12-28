@@ -52,14 +52,13 @@ void TabuSearch::test_algorithm(vector<Node> nodes) {
     //założenia dla długości listy Tabu:
     //Dla N < 50 -> N*0.2
     //Dla N < 50 <= 500 -> N * 0.05
-    //Dla N > 500 -> N * 0.01ta
+    //Dla N > 500 -> N * 0.01
 
     if(nodes.size() < 50) {tabu_size = nodes.size() * 0.5;}
     else if(nodes.size() > 50 && nodes.size() < 500) {tabu_size = nodes.size() * 0.05;}
     else {tabu_size = nodes.size() * 0.01;}
 
     //ustawienie rozmiaru kolejki tabu
-
 
     this->algorithm(nodes);
 }

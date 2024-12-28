@@ -57,7 +57,7 @@ void NearestNeighbour::findBestWay(vector<Node> nodes) {
         nearestNeighbour(&nodes[x], nodes.size(),visited,0,&nodes[x],1);
         best_scores.push_back(result);
         best_ways.push_back(best_way);
-        result = INT_MAX;
+        result = INT16_MAX;
         best_way.clear();
     }
     auto min_it = std::min_element(best_scores.begin(), best_scores.end());

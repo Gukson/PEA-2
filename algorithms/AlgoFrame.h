@@ -1,6 +1,3 @@
-//
-// Created by Kuba on 12/12/2024.
-//
 
 #ifndef PEA_2_ALGOFRAME_H
 #define PEA_2_ALGOFRAME_H

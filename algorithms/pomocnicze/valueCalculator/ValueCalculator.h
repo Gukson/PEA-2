@@ -12,7 +12,6 @@ using namespace std;
 
 class ValueCalculator {
 public:
-
     pair<Node*, int> findNeighbor(Node *node,int targetValue);
     int calculate_value(vector<Node> nodes, vector<int> way);
 };
