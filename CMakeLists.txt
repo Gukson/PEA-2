@@ -21,4 +21,6 @@ add_executable(PEA_2 main.cpp
         algorithms/AntColony/AntColonyOptimization.cpp
         algorithms/AntColony/AntColonyOptimization.h
         algorithms/pomocnicze/ant/Ant.cpp
-        algorithms/pomocnicze/ant/Ant.h)
+        algorithms/pomocnicze/ant/Ant.h
+        algorithms/SimulatedAnnealing/SimulatedAnnealing.cpp
+        algorithms/SimulatedAnnealing/SimulatedAnnealing.h)

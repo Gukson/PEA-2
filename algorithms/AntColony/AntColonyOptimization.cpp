@@ -24,6 +24,9 @@ void AntColonyOptimization::test_algorithm(vector<Node> nodes) {
         for (int z = 0; z < feromon.size(); z++) {
             for (int y = 0; y < feromon[z].size(); y++) {
                 feromon[z][y] = (1 - this->rho) * feromon[z][y];
+                if(feromon[z][y] <= 0){
+                    feromon[z][y] = 1e-6;
+                }
                 feromon[z][y] += matrix[z][y];
             }
         }
