@@ -23,4 +23,7 @@ add_executable(PEA_2 main.cpp
         algorithms/pomocnicze/ant/Ant.cpp
         algorithms/pomocnicze/ant/Ant.h
         algorithms/SimulatedAnnealing/SimulatedAnnealing.cpp
-        algorithms/SimulatedAnnealing/SimulatedAnnealing.h)
+        algorithms/SimulatedAnnealing/SimulatedAnnealing.h
+        config/configClass/Config.cpp
+        algorithms/pomocnicze/statCalculator/statCalculator.cpp
+        algorithms/pomocnicze/statCalculator/statCalculator.h)

@@ -109,6 +109,18 @@ build CMakeFiles/PEA_2.dir/algorithms/SimulatedAnnealing/SimulatedAnnealing.cpp.
   OBJECT_DIR = CMakeFiles/PEA_2.dir
   OBJECT_FILE_DIR = CMakeFiles/PEA_2.dir/algorithms/SimulatedAnnealing
 
+build CMakeFiles/PEA_2.dir/config/configClass/Config.cpp.o: CXX_COMPILER__PEA_2_unscanned_Debug /Users/kuba/CLionProjects/PEA-2/config/configClass/Config.cpp || cmake_object_order_depends_target_PEA_2
+  DEP_FILE = CMakeFiles/PEA_2.dir/config/configClass/Config.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/PEA_2.dir
+  OBJECT_FILE_DIR = CMakeFiles/PEA_2.dir/config/configClass
+
+build CMakeFiles/PEA_2.dir/algorithms/pomocnicze/statCalculator/statCalculator.cpp.o: CXX_COMPILER__PEA_2_unscanned_Debug /Users/kuba/CLionProjects/PEA-2/algorithms/pomocnicze/statCalculator/statCalculator.cpp || cmake_object_order_depends_target_PEA_2
+  DEP_FILE = CMakeFiles/PEA_2.dir/algorithms/pomocnicze/statCalculator/statCalculator.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/PEA_2.dir
+  OBJECT_FILE_DIR = CMakeFiles/PEA_2.dir/algorithms/pomocnicze/statCalculator
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target PEA_2
@@ -117,7 +129,7 @@ build CMakeFiles/PEA_2.dir/algorithms/SimulatedAnnealing/SimulatedAnnealing.cpp.
 #############################################
 # Link the executable PEA_2
 
-build PEA_2: CXX_EXECUTABLE_LINKER__PEA_2_Debug CMakeFiles/PEA_2.dir/main.cpp.o CMakeFiles/PEA_2.dir/algorithms/pomocnicze/valueCalculator/ValueCalculator.cpp.o CMakeFiles/PEA_2.dir/algorithms/tabu_search/TabuSearch.cpp.o CMakeFiles/PEA_2.dir/algorithms/NearestNeighbour/NearestNeighbour.cpp.o CMakeFiles/PEA_2.dir/algorithms/pomocnicze/usun_wpolne/usunWspolne.cpp.o CMakeFiles/PEA_2.dir/Tree/Node/Node.cpp.o CMakeFiles/PEA_2.dir/data/data_loader/DataLoader.cpp.o CMakeFiles/PEA_2.dir/algorithms/AntColony/AntColonyOptimization.cpp.o CMakeFiles/PEA_2.dir/algorithms/pomocnicze/ant/Ant.cpp.o CMakeFiles/PEA_2.dir/algorithms/SimulatedAnnealing/SimulatedAnnealing.cpp.o
+build PEA_2: CXX_EXECUTABLE_LINKER__PEA_2_Debug CMakeFiles/PEA_2.dir/main.cpp.o CMakeFiles/PEA_2.dir/algorithms/pomocnicze/valueCalculator/ValueCalculator.cpp.o CMakeFiles/PEA_2.dir/algorithms/tabu_search/TabuSearch.cpp.o CMakeFiles/PEA_2.dir/algorithms/NearestNeighbour/NearestNeighbour.cpp.o CMakeFiles/PEA_2.dir/algorithms/pomocnicze/usun_wpolne/usunWspolne.cpp.o CMakeFiles/PEA_2.dir/Tree/Node/Node.cpp.o CMakeFiles/PEA_2.dir/data/data_loader/DataLoader.cpp.o CMakeFiles/PEA_2.dir/algorithms/AntColony/AntColonyOptimization.cpp.o CMakeFiles/PEA_2.dir/algorithms/pomocnicze/ant/Ant.cpp.o CMakeFiles/PEA_2.dir/algorithms/SimulatedAnnealing/SimulatedAnnealing.cpp.o CMakeFiles/PEA_2.dir/config/configClass/Config.cpp.o CMakeFiles/PEA_2.dir/algorithms/pomocnicze/statCalculator/statCalculator.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk
   OBJECT_DIR = CMakeFiles/PEA_2.dir
   POST_BUILD = :

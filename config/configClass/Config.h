@@ -19,19 +19,28 @@ using namespace std;
 class Config {
 public:
     vector<string> files;
-    int maxTime;
-    int repetitionsPerInstance;
     string outputFile;
-    bool progressBar;
-    bool showNodesInConsole;
     void loadConfig(string fileName);
-    bool bruteForce;
-    bool nn;
-    bool radnom;
-    bool dfs;
-    bool bfs;
-    bool lcfs;
+    int maxTime;
+    bool progressBar;
     bool showInConsole;
+    bool showNodesInConsole;
+    int repetitionsPerInstance;
+
+    //algorithm
+    bool AntColony;
+    bool SimulatedAnnealing;
+    bool TabuSearch;
+
+    //SimulatedAnnealing
+    float annealingAlfa;
+    float temperature;
+    float min_temperature;
+    string way;
+
+
+
+
 private:
     void openJSON(string fileName);
     json data;

@@ -221,3 +221,33 @@ Błąd bezwzględny wyniku: 0
 LP;czas;blad bezwzgledny;blad wzgledny
 1;24.094;0;0
 
+Średni czas;0.027153
+Średni błąd bezwzględny;0s
+Średni błąd bezwzględny;0%
+Średni błąd względny;0%
+
+Uzyskano wynik: 178
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 3
+Ścieżka z powyższym wynikiem: 6 7 0 8 12 5 3 4 1 9 2 10 11 6 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.027153;0;0
+
+Średni czas;0.0054254
+Średni błąd bezwzględny;0.00867464s
+Średni błąd bezwzględny;0.867464%
+Średni błąd względny;159.889%
+
+Uzyskano wynik: 184
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 9
+Ścieżka z powyższym wynikiem: 0 7 6 8 1 4 3 5 12 10 2 9 11 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.027112;0.0216866;3.99724
+2;4e-06;0.0054214;0.999263
+3;4e-06;0.0054214;0.999263
+4;4e-06;0.0054214;0.999263
+5;3e-06;0.0054224;0.999447
+

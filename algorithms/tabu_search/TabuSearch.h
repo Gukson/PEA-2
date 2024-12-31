@@ -10,6 +10,7 @@
 #include "../pomocnicze/valueCalculator/ValueCalculator.h"
 #include "../NearestNeighbour/NearestNeighbour.h"
 #include "../pomocnicze/FixedSizeQueue.h"
+#include "../../config/configClass/Config.h"
 #include <vector>
 
 using namespace std;

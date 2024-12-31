@@ -6,34 +6,47 @@
 
 void SimulatedAnnealing::algorithm(vector<Node> nodes) {
     while(temperature > min_temperature){
-        vector<int> new_way = change_order(best_way);
+        vector<int> new_way = vector<int>();
+        if(this->choose_way_by == "change") new_way = change_order(best_way);
+        else new_way = swap_random_cities(best_way);
+
         int new_cost = v.calculate_value(nodes,new_way);
         int delta = new_cost - cost;
-        if (delta < 0 || (exp(-delta / temperature) > ((double)rand() / RAND_MAX))) {
+        if (delta < 0 || (exp(-1.0 * delta / temperature) > ((double)rand() / RAND_MAX))) {
             if(new_cost < cost){
                 cost = new_cost;
                 best_way = new_way;
+                //zatrzymujemy algorytm, gdy znajdziemy wartość optymalną
+                if (cost == optimum) break;
             }
         }
         temperature *= alfa;
-        for(auto p: best_way){
-            cout << p << " ";
-        }
-        cout << " : " << cost << endl;
     }
 }
 
 void SimulatedAnnealing::test_algorithm(vector<Node> nodes) {
     vector<Node*> visited = vector<Node*>();
     NearestNeighbour n = NearestNeighbour();
-    n.nearestNeighbour(&nodes[0], nodes.size(),visited,0,&nodes[0],1);
-    best_way = n.best_way; //to jest nasze początkowe minimum lokalne
-    cost = n.result;
-    algorithm(nodes);
-    for(auto p: best_way){
-        cout << p << " ";
+    vector<double> timeMeasurements = vector<double>();
+    vector<double> absolutes = vector<double>();
+    vector<double> relatives = vector<double>();
+
+    for(int x = 0; x < config.repetitionsPerInstance; x++){
+
+        n.nearestNeighbour(&nodes[0], nodes.size(),visited,0,&nodes[0],1);
+        best_way = n.best_way; //to jest nasze początkowe minimum lokalne
+        cost = n.result;
+        auto start = chrono::high_resolution_clock::now();
+        algorithm(nodes);
+        auto finish = chrono::high_resolution_clock::now();
+        ms_double = finish - start;
+        timeMeasurements.push_back(ms_double.count() / 1000);
+
     }
-    cout << " : " << cost << endl;
+    statCalculator s = statCalculator();
+    vector<double> stats = s.calcStats(timeMeasurements,absolutes,relatives);
+    s.statsOutput(stats,timeMeasurements,absolutes,relatives,best_way,cost,config.showInConsole,optimum,config.outputFile);
+
 }
 
 vector<int> SimulatedAnnealing::swap_random_cities(vector<int> actual_order) {

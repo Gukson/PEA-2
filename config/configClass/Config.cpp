@@ -27,12 +27,14 @@ void Config::loadConfig(string fileName) {
     outputFile = data["output_file"];
     progressBar = data["progress_bar"];
     showNodesInConsole = data["show_nodes_in_console"];
-    bruteForce = data["algorithms"]["Bruteforce"];
-    nn = data["algorithms"]["Nearest-neighbour"];
-    radnom = data["algorithms"]["Random"];
-    dfs = data["algorithms"]["DFS"];
-    bfs = data["algorithms"]["BFS"];
-    lcfs = data["algorithms"]["LCFS"];
     showInConsole = data["measurement_results_in_the_console"];
+
+    //SA
+    annealingAlfa = data["SimulatedAnnealingSettings"]["alfa"];
+    temperature =  data["SimulatedAnnealingSettings"]["start_temperature"];
+    min_temperature = data["SimulatedAnnealingSettings"]["min_temperature"];
+    way = data["SimulatedAnnealingSettings"]["choose_way_by"];
+
+
 }
 

@@ -6,15 +6,18 @@
   ],
   "algorithms":
   {
-    "Bruteforce": false,
-    "Nearest-neighbour": false,
-    "Random": false,
-    "DFS": true,
-    "BFS": true,
-    "LCFS": true
+    "TabuSearch": true,
+    "SimulatedAnnealing": true,
+    "AntColony": true
+  },
+  "SimulatedAnnealingSettings": {
+    "min_temperature": 10.0,
+    "start_temperature": 100.0,
+    "alfa": 0.995,
+    "choose_way_by": "change"
   },
   "max_time": 1,
-  "repetitions_per_instance": 1,
+  "repetitions_per_instance": 5,
   "output_file": "zajecia.txt",
   "progress_bar": true,
   "show_nodes_in_console": false,

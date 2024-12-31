@@ -12,6 +12,8 @@ int main() {
     DataLoader dataLoader = DataLoader();
 
     vector<Node> nodes = dataLoader.loadData("13nodes.txt");
+    Config c = Config();
+    c.loadConfig("config.json");
 //    TabuSearch t;
 //
 //    // Wywołanie metody test_algorithm
@@ -22,7 +24,7 @@ int main() {
 //    ant.iterations = 100;
 //    ant.algorithm(nodes);
 
-    SimulatedAnnealing s = SimulatedAnnealing();
+    SimulatedAnnealing s = SimulatedAnnealing(c,dataLoader.optimum);
     s.test_algorithm(nodes);
 
 }

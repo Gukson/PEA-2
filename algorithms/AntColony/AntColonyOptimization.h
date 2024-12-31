@@ -9,6 +9,7 @@
 #include "../AlgoFrame.h"
 #include "../pomocnicze/ant/Ant.h"
 #include "../pomocnicze/valueCalculator/ValueCalculator.h"
+#include "../../config/configClass/Config.h"
 
 using namespace std;
 
