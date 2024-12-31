@@ -47,12 +47,12 @@ void statCalculator::statsOutput(vector<double> stats, vector<double> timeMeasur
             cout << x << " ";
         }
         cout << endl;
-        cout << "LP czas blad bezwzgledny blad wzgledny" << endl;
-        for (int x = 0; x < timeMeasurements.size(); x++) {
-            cout << x + 1 << ";" << timeMeasurements[x] << ";" << absolutes[x] << ";" << relatives[x]
-                 << endl;
-        }
-        cout << endl;
+//        cout << "LP czas blad bezwzgledny blad wzgledny" << endl;
+//        for (int x = 0; x < timeMeasurements.size(); x++) {
+//            cout << x + 1 << ";" << timeMeasurements[x] << ";" << absolutes[x] << ";" << relatives[x]
+//                 << endl;
+//        }
+//        cout << endl;
     }
 
 

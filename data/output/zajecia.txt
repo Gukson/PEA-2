@@ -251,3 +251,54 @@ LP;czas;blad bezwzgledny;blad wzgledny
 4;4e-06;0.0054214;0.999263
 5;3e-06;0.0054224;0.999447
 
+Średni czas;0.0056388
+Średni błąd bezwzględny;0.00676216s
+Średni błąd bezwzględny;0.676216%
+Średni błąd względny;119.922%
+
+Uzyskano wynik: 184
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 9
+Ścieżka z powyższym wynikiem: 0 7 6 8 1 4 3 5 12 10 2 9 11 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.012383;0.0067442;1.19603
+2;0.0158;0.0101612;1.80201
+3;4e-06;0.0056348;0.999291
+4;4e-06;0.0056348;0.999291
+5;3e-06;0.0056358;0.999468
+
+Średni czas;0.0056356
+Średni błąd bezwzględny;0.00901136s
+Średni błąd bezwzględny;0.901136%
+Średni błąd względny;159.901%
+
+Uzyskano wynik: 184
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 9
+Ścieżka z powyższym wynikiem: 0 7 6 8 1 4 3 5 12 10 2 9 11 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.028164;0.0225284;3.99752
+2;4e-06;0.0056316;0.99929
+3;4e-06;0.0056316;0.99929
+4;3e-06;0.0056326;0.999468
+5;3e-06;0.0056326;0.999468
+
+Średni czas;0.0054402
+Średni błąd bezwzględny;0.00869832s
+Średni błąd bezwzględny;0.869832%
+Średni błąd względny;159.89%
+
+Uzyskano wynik: 184
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 9
+Ścieżka z powyższym wynikiem: 0 7 6 8 1 4 3 5 12 10 2 9 11 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.027186;0.0217458;3.99724
+2;4e-06;0.0054362;0.999265
+3;3e-06;0.0054372;0.999449
+4;4e-06;0.0054362;0.999265
+5;4e-06;0.0054362;0.999265
+

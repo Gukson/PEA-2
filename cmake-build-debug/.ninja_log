@@ -15,3 +15,8 @@
 2	1937	1735657309565327202	CMakeFiles/PEA_2.dir/algorithms/SimulatedAnnealing/SimulatedAnnealing.cpp.o	d512ce1f5efb1573
 2	2037	1735657309564939492	CMakeFiles/PEA_2.dir/main.cpp.o	df4f4f52b9c89265
 2037	2203	1735657311600318000	PEA_2	9e0e633f6a0c400b
+3	22047	1735658357684178329	CMakeFiles/PEA_2.dir/algorithms/SimulatedAnnealing/SimulatedAnnealing.cpp.o	d512ce1f5efb1573
+3	22074	1735658357683930618	CMakeFiles/PEA_2.dir/main.cpp.o	df4f4f52b9c89265
+2	117	1735658383517673198	PEA_2	9e0e633f6a0c400b
+1	751	1735658466969663079	CMakeFiles/PEA_2.dir/algorithms/pomocnicze/statCalculator/statCalculator.cpp.o	110ba3f4553e8fe8
+751	847	1735658467719658577	PEA_2	9e0e633f6a0c400b

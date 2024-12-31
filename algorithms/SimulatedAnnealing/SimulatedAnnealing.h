@@ -31,6 +31,7 @@ private:
     ValueCalculator v = ValueCalculator();
     int cost = 0;
     chrono::duration<double, std::milli> ms_double;
+    std::chrono::time_point<std::chrono::high_resolution_clock> time;
     vector<int> best_way;
 
     int optimum;

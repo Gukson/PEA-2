@@ -13,6 +13,10 @@ void SimulatedAnnealing::algorithm(vector<Node> nodes) {
         int new_cost = v.calculate_value(nodes,new_way);
         int delta = new_cost - cost;
         if (delta < 0 || (exp(-1.0 * delta / temperature) > ((double)rand() / RAND_MAX))) {
+            if (std::chrono::duration_cast<std::chrono::minutes>(std::chrono::high_resolution_clock::now() - time).count() >=
+                config.maxTime) {
+                throw std::runtime_error("przekroczono limit czasowy");
+            }
             if(new_cost < cost){
                 cost = new_cost;
                 best_way = new_way;
@@ -37,7 +41,14 @@ void SimulatedAnnealing::test_algorithm(vector<Node> nodes) {
         best_way = n.best_way; //to jest nasze początkowe minimum lokalne
         cost = n.result;
         auto start = chrono::high_resolution_clock::now();
-        algorithm(nodes);
+        time = start;
+        try {
+            algorithm(nodes);
+        } catch (const std::runtime_error &e) {
+            std::cerr << "Błąd: " << e.what() << std::endl;
+            cout << "Przekroczono limit " << config.maxTime << "minut!" << endl;
+        }
+
         auto finish = chrono::high_resolution_clock::now();
         ms_double = finish - start;
         timeMeasurements.push_back(ms_double.count() / 1000);
