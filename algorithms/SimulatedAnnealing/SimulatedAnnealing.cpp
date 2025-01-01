@@ -13,15 +13,35 @@ void SimulatedAnnealing::algorithm(vector<Node> nodes) {
         int new_cost = v.calculate_value(nodes,new_way);
         int delta = new_cost - cost;
         if (delta < 0 || (exp(-1.0 * delta / temperature) > ((double)rand() / RAND_MAX))) {
+
+            //przekroczenie limitu czasu
             if (std::chrono::duration_cast<std::chrono::minutes>(std::chrono::high_resolution_clock::now() - time).count() >=
                 config.maxTime) {
                 throw std::runtime_error("przekroczono limit czasowy");
             }
+
+            //zatrzymujemy algorytm, gdy znajdziemy wartość optymalną
+            if (cost == optimum) throw std::runtime_error("znaleziono optimum");
+
+            if(cost - optimum <= (optimum * config.SAAcceptableDeviationFromOptimum)/100.0) {
+                throw std::runtime_error("Wynik w granicach tolerancji odchylenia od wyniku optymalnego");
+            }
+
             if(new_cost < cost){
                 cost = new_cost;
                 best_way = new_way;
-                //zatrzymujemy algorytm, gdy znajdziemy wartość optymalną
-                if (cost == optimum) break;
+
+            }
+            if(new_cost == last_cost){
+                this->noChangesStreak += 1;
+            } else{
+                this->noChangesStreak = 0;
+            }
+            this->last_cost = new_cost;
+
+            //powtórzenia bez zmian
+            if(this->noChangesStreak == config.SAIterationsLimit){
+                throw std::runtime_error("osiągnięto limit pomiarów bez zmiany wyniku");
             }
         }
         temperature *= alfa;
@@ -42,11 +62,11 @@ void SimulatedAnnealing::test_algorithm(vector<Node> nodes) {
         cost = n.result;
         auto start = chrono::high_resolution_clock::now();
         time = start;
+        last_cost = cost;
         try {
             algorithm(nodes);
         } catch (const std::runtime_error &e) {
             std::cerr << "Błąd: " << e.what() << std::endl;
-            cout << "Przekroczono limit " << config.maxTime << "minut!" << endl;
         }
 
         auto finish = chrono::high_resolution_clock::now();
@@ -56,7 +76,7 @@ void SimulatedAnnealing::test_algorithm(vector<Node> nodes) {
     }
     statCalculator s = statCalculator();
     vector<double> stats = s.calcStats(timeMeasurements,absolutes,relatives);
-    s.statsOutput(stats,timeMeasurements,absolutes,relatives,best_way,cost,config.showInConsole,optimum,config.outputFile);
+    s.statsOutput(stats,timeMeasurements,absolutes,relatives,best_way,cost,config.showInConsole,optimum,config.outputFile, "SimulatedAnnealing");
 
 }
 

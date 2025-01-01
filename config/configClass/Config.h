@@ -37,6 +37,13 @@ public:
     float temperature;
     float min_temperature;
     string way;
+    int SAIterationsLimit;
+    int SAAcceptableDeviationFromOptimum;
+
+    //Tabu
+    string TabuUpperLimit;
+    int TabuIterationsLimit;
+    int TabuAcceptableDeviationFromOptimum;
 
 
 

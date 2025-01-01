@@ -40,6 +40,9 @@ private:
     float min_temperature;
     string choose_way_by;
 
+    int noChangesStreak = 0;
+    int last_cost;
+
 private:
     vector<int> swap_random_cities(vector<int> actual_order);
     vector<int> change_order(vector<int> actual_order);

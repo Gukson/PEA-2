@@ -14,11 +14,18 @@
     "min_temperature": 10.0,
     "start_temperature": 100.0,
     "alfa": 0.995,
-    "choose_way_by": "change"
+    "choose_way_by": "change",
+    "SAFinishAfterIterationsWithNoChanges": 5,
+    "SAAcceptableDeviationFromOptimum": 1
+  },
+  "TabuSearch": {
+    "TabuUpperLimit": "nn",
+    "TabuFinishAfterIterationsWithNoChanges": 5,
+    "TabuAcceptableDeviationFromOptimum": 1
   },
   "max_time": 1,
   "repetitions_per_instance": 5,
-  "output_file": "zajecia.txt",
+  "output_file": "test.txt",
   "progress_bar": true,
   "show_nodes_in_console": false,
   "measurement_results_in_the_console" : true

@@ -1,0 +1,302 @@
+Średni czas;0.0053516
+Średni błąd bezwzględny;0.00641712s
+Średni błąd bezwzględny;0.641712%
+Średni błąd względny;119.91%
+
+Uzyskano wynik: 184
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 9
+Ścieżka z powyższym wynikiem: 0 7 6 8 1 4 3 5 12 10 2 9 11 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.018607;0.0132554;2.4769
+2;0.008139;0.0027874;0.520854
+3;5e-06;0.0053466;0.999066
+4;4e-06;0.0053476;0.999253
+5;3e-06;0.0053486;0.999439
+
+Średni czas;0.0053768
+Średni błąd bezwzględny;0.00859608s
+Średni błąd bezwzględny;0.859608%
+Średni błąd względny;159.874%
+
+Uzyskano wynik: 184
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 9
+Ścieżka z powyższym wynikiem: 0 7 6 8 1 4 3 5 12 10 2 9 11 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.026867;0.0214902;3.99684
+2;6e-06;0.0053708;0.998884
+3;4e-06;0.0053728;0.999256
+4;3e-06;0.0053738;0.999442
+5;4e-06;0.0053728;0.999256
+
+Średni czas;0.002542
+Średni błąd bezwzględny;0.00406s
+Średni błąd bezwzględny;0.406%
+Średni błąd względny;159.717%
+
+Uzyskano wynik: 186
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 0
+Ścieżka z powyższym wynikiem: 0 6 9 10 5 8 2 1 3 4 7 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.012692;0.01015;3.99292
+2;6e-06;0.002536;0.99764
+3;4e-06;0.002538;0.998426
+4;4e-06;0.002538;0.998426
+5;4e-06;0.002538;0.998426
+
+Średni czas;0.0024902
+Średni błąd bezwzględny;0.00397872s
+Średni błąd bezwzględny;0.397872%
+Średni błąd względny;159.775%
+
+Uzyskano wynik: 186
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 0
+Ścieżka z powyższym wynikiem: 0 6 9 10 5 8 2 1 3 4 7 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.012437;0.0099468;3.99438
+2;4e-06;0.0024862;0.998394
+3;4e-06;0.0024862;0.998394
+4;3e-06;0.0024872;0.998795
+5;3e-06;0.0024872;0.998795
+
+TabuSearch
+Średni czas;0.0024916
+Średni błąd bezwzględny;0.00398176s
+Średni błąd bezwzględny;0.398176%
+Średni błąd względny;159.807%
+
+Uzyskano wynik: 186
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 0
+Ścieżka z powyższym wynikiem: 0 6 9 10 5 8 2 1 3 4 7 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.012446;0.0099544;3.99518
+2;3e-06;0.0024886;0.998796
+3;3e-06;0.0024886;0.998796
+4;3e-06;0.0024886;0.998796
+5;3e-06;0.0024886;0.998796
+
+TabuSearch - 11
+Średni czas;0.002473
+Średni błąd bezwzględny;0.003952s
+Średni błąd bezwzględny;0.3952%
+Średni błąd względny;159.806%
+
+Uzyskano wynik: 186
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 0
+Ścieżka z powyższym wynikiem: 0 6 9 10 5 8 2 1 3 4 7 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.012353;0.00988;3.99515
+2;3e-06;0.00247;0.998787
+3;3e-06;0.00247;0.998787
+4;3e-06;0.00247;0.998787
+5;3e-06;0.00247;0.998787
+
+TabuSearch - 11
+Średni czas;0.0024312
+Średni błąd bezwzględny;0.00388432s
+Średni błąd bezwzględny;0.388432%
+Średni błąd względny;159.77%
+
+Uzyskano wynik: 186
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 0
+Ścieżka z powyższym wynikiem: 0 6 9 10 5 8 2 1 3 4 7 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.012142;0.0097108;3.99424
+2;4e-06;0.0024272;0.998355
+3;3e-06;0.0024282;0.998766
+4;4e-06;0.0024272;0.998355
+5;3e-06;0.0024282;0.998766
+
+SimulatedAnnealing - 11
+Średni czas;0.0040486
+Średni błąd bezwzględny;0.00485432s
+Średni błąd bezwzględny;0.485432%
+Średni błąd względny;119.901%
+
+Uzyskano wynik: 209
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 23
+Ścieżka z powyższym wynikiem: 0 6 4 7 5 8 2 1 3 9 10 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.010213;0.0061644;1.5226
+2;0.01002;0.0059714;1.47493
+3;4e-06;0.0040446;0.999012
+4;3e-06;0.0040456;0.999259
+5;3e-06;0.0040456;0.999259
+
+SimulatedAnnealing - 11
+Średni czas;0.0002396
+Średni błąd bezwzględny;0.00028216s
+Średni błąd bezwzględny;0.028216%
+Średni błąd względny;117.763%
+
+Uzyskano wynik: 209
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 23
+Ścieżka z powyższym wynikiem: 0 6 4 7 5 8 2 1 3 9 10 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000945;0.0007054;2.94407
+2;6.9e-05;0.0001706;0.71202
+3;6.2e-05;0.0001776;0.741235
+4;6.1e-05;0.0001786;0.745409
+5;6.1e-05;0.0001786;0.745409
+
+SimulatedAnnealing - 11
+Średni czas;0.0001924
+Średni błąd bezwzględny;0.00020904s
+Średni błąd bezwzględny;0.020904%
+Średni błąd względny;108.649%
+
+Uzyskano wynik: 209
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 23
+Ścieżka z powyższym wynikiem: 0 6 4 7 5 8 2 1 3 9 10 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000715;0.0005226;2.71622
+2;6.7e-05;0.0001254;0.651767
+3;6.2e-05;0.0001304;0.677755
+4;6.1e-05;0.0001314;0.682952
+5;5.7e-05;0.0001354;0.703742
+
+SimulatedAnnealing - 11
+Średni czas;0.0001762
+Średni błąd bezwzględny;0.00019272s
+Średni błąd bezwzględny;0.019272%
+Średni błąd względny;109.376%
+
+Uzyskano wynik: 209
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 23
+Ścieżka z powyższym wynikiem: 0 6 4 7 5 8 2 1 3 9 10 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000658;0.0004818;2.73439
+2;6.1e-05;0.0001152;0.653802
+3;5.4e-05;0.0001222;0.69353
+4;5.5e-05;0.0001212;0.687855
+5;5.3e-05;0.0001232;0.699205
+
+SimulatedAnnealing - 11
+Średni czas;0.0002094
+Średni błąd bezwzględny;0.00023384s
+Średni błąd bezwzględny;0.023384%
+Średni błąd względny;111.671%
+
+Uzyskano wynik: 209
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 23
+Ścieżka z powyższym wynikiem: 0 6 4 7 5 8 2 1 3 9 10 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000794;0.0005846;2.79179
+2;6.6e-05;0.0001434;0.684814
+3;5.5e-05;0.0001544;0.737345
+4;6.1e-05;0.0001484;0.708691
+5;7.1e-05;0.0001384;0.660936
+
+SimulatedAnnealing - 11
+Średni czas;0.0001836
+Średni błąd bezwzględny;0.00020216s
+Średni błąd bezwzględny;0.020216%
+Średni błąd względny;110.109%
+
+Uzyskano wynik: 209
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 23
+Ścieżka z powyższym wynikiem: 0 6 4 7 5 8 2 1 3 9 10 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000689;0.0005054;2.75272
+2;6.1e-05;0.0001226;0.667756
+3;5.5e-05;0.0001286;0.700436
+4;5.5e-05;0.0001286;0.700436
+5;5.8e-05;0.0001256;0.684096
+
+SimulatedAnnealing - 11
+Średni czas;0.0001748
+Średni błąd bezwzględny;0.00018888s
+Średni błąd bezwzględny;0.018888%
+Średni błąd względny;108.055%
+
+Uzyskano wynik: 209
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 23
+Ścieżka z powyższym wynikiem: 0 6 4 7 5 8 2 1 3 9 10 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.000647;0.0004722;2.70137
+2;6.1e-05;0.0001138;0.65103
+3;5.8e-05;0.0001168;0.668192
+4;5.5e-05;0.0001198;0.685355
+5;5.3e-05;0.0001218;0.696796
+
+SimulatedAnnealing - 11
+Średni czas;0.0041036
+Średni błąd bezwzględny;0.00419592s
+Średni błąd bezwzględny;0.419592%
+Średni błąd względny;102.25%
+
+Uzyskano wynik: 209
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 23
+Ścieżka z powyższym wynikiem: 0 6 4 7 5 8 2 1 3 9 10 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.009339;0.0052354;1.27581
+2;0.001815;0.0022886;0.557705
+3;0.009358;0.0052544;1.28044
+4;3e-06;0.0041006;0.999269
+5;3e-06;0.0041006;0.999269
+
+TabuSearch - 11
+Średni czas;0.0026324
+Średni błąd bezwzględny;0.00418304s
+Średni błąd bezwzględny;0.418304%
+Średni błąd względny;158.906%
+
+Uzyskano wynik: 186
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 0
+Ścieżka z powyższym wynikiem: 0 6 9 10 5 8 2 1 3 4 7 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.01309;0.0104576;3.97265
+2;2.2e-05;0.0026104;0.991643
+3;1.7e-05;0.0026154;0.993542
+4;1.8e-05;0.0026144;0.993162
+5;1.5e-05;0.0026174;0.994302
+
+TabuSearch - 11
+Średni czas;0.0026812
+Średni błąd bezwzględny;0.00426712s
+Średni błąd bezwzględny;0.426712%
+Średni błąd względny;159.15%
+
+Uzyskano wynik: 186
+Błąd względny wyniku: 0
+Błąd bezwzględny wyniku: 0
+Ścieżka z powyższym wynikiem: 0 6 9 10 5 8 2 1 3 4 7 0 
+
+LP;czas;blad bezwzgledny;blad wzgledny
+1;0.013349;0.0106678;3.97874
+2;1.8e-05;0.0026632;0.993287
+3;1.5e-05;0.0026662;0.994405
+4;1.2e-05;0.0026692;0.995524
+5;1.2e-05;0.0026692;0.995524
+

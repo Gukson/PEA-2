@@ -34,7 +34,13 @@ void Config::loadConfig(string fileName) {
     temperature =  data["SimulatedAnnealingSettings"]["start_temperature"];
     min_temperature = data["SimulatedAnnealingSettings"]["min_temperature"];
     way = data["SimulatedAnnealingSettings"]["choose_way_by"];
+    SAIterationsLimit = data["SimulatedAnnealingSettings"]["SAFinishAfterIterationsWithNoChanges"];
+    SAAcceptableDeviationFromOptimum = data["SimulatedAnnealingSettings"]["SAAcceptableDeviationFromOptimum"];
 
+    //Tabu
+    TabuUpperLimit = data["TabuSearch"]["TabuUpperLimit"];
+    TabuIterationsLimit = data["TabuSearch"]["TabuFinishAfterIterationsWithNoChanges"];
+    TabuAcceptableDeviationFromOptimum = data["TabuSearch"]["TabuAcceptableDeviationFromOptimum"];
 
 }
 

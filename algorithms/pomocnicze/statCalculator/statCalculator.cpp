@@ -6,9 +6,10 @@
 
 void statCalculator::statsOutput(vector<double> stats, vector<double> timeMeasurements, vector<double> absolutes,
                                  vector<double> relatives, vector<int> best_way, int wynik, bool show, int bestWynik,
-                                 string filename) {
+                                 string filename, string algos) {
     ofstream outputFile;
     outputFile.open("../data/output/" + filename, std::ios_base::app);
+    outputFile << algos << " - " << best_way.size()-1 << endl;
     outputFile << "Średni czas;" << stats[0] << endl;
     outputFile << "Średni błąd bezwzględny;" << stats[1] << "s" << endl;
     outputFile << "Średni błąd bezwzględny;" << stats[1] * 100 << "%" << endl;
@@ -34,6 +35,7 @@ void statCalculator::statsOutput(vector<double> stats, vector<double> timeMeasur
     outputFile << endl;
 
     if(show){
+        cout << algos << " - " << best_way.size()-1 << endl;
         cout << "Średni czas;" << stats[0] << endl;
         cout << "Średni błąd bezwzględny;" << stats[1] << "s" << endl;
         cout << "Średni błąd bezwzględny;" << stats[1] * 100 << "%" << endl;
@@ -54,7 +56,6 @@ void statCalculator::statsOutput(vector<double> stats, vector<double> timeMeasur
 //        }
 //        cout << endl;
     }
-
 
 }
 

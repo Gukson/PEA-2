@@ -11,8 +11,8 @@ add_executable(PEA_2 main.cpp
         algorithms/pomocnicze/valueCalculator/ValueCalculator.h
         algorithms/AlgoFrame.h
         algorithms/AlgoFrame.h
-        algorithms/tabu_search/TabuSearch.cpp
-        algorithms/tabu_search/TabuSearch.h
+        algorithms/Tabu_search/TabuSearch.cpp
+        algorithms/Tabu_search/TabuSearch.h
         algorithms/NearestNeighbour/NearestNeighbour.cpp
         algorithms/pomocnicze/usun_wpolne/usunWspolne.cpp
         Tree/Node/Node.cpp
