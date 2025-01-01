@@ -4,69 +4,121 @@
 
 #include "AntColonyOptimization.h"
 
+
 void AntColonyOptimization::test_algorithm(vector<Node> nodes) {
+    vector<double> timeMeasurements = vector<double>();
+    vector<double> absolutes = vector<double>();
+    vector<double> relatives = vector<double>();
+
+    for(int x = 0; x < config.repetitionsPerInstance; x++){
+        this->best_way.clear();
+        this->best_cost = INT16_MAX;
+        this->feromon = std::vector<std::vector<double>>(nodes.size(), std::vector<double>(nodes.size(), 1e-6));
+        this->ant_vector = vector<Ant>();
+        std::random_device rd;        // Źródło entropii
+        std::mt19937 gen(rd());       // Generator Mersenne Twister
+        std::uniform_int_distribution<> dist(0, nodes.size()-1);
+        for(int x = 0; x < this->m; x++){
+            int randomNumber = dist(gen);
+            ant_vector.push_back(Ant(&nodes[randomNumber]));
+        }
+        auto start = chrono::high_resolution_clock::now();
+        time = start;
+        try {
+            algorithm(nodes);
+        } catch (const std::runtime_error &e) {
+            std::cerr << "Błąd: " << e.what() << std::endl;
+        }
+
+        auto finish = chrono::high_resolution_clock::now();
+        ms_double = finish - start;
+        timeMeasurements.push_back(ms_double.count() / 1000);
+    }
+
+
+    statCalculator s = statCalculator();
+    vector<double> stats = s.calcStats(timeMeasurements,absolutes,relatives);
+    s.statsOutput(stats,timeMeasurements,absolutes,relatives,best_way,best_cost,config.showInConsole,optimum,config.outputFile, "Ant");
+}
+
+void AntColonyOptimization::algorithm(vector<Node> nodes) {
     vector<vector<double>> matrix(nodes.size(), vector<double>(nodes.size(),0));
 
-    for(int x = 0; x < iterations; x++) {
+    while (true) {
+        std::random_device rd;        // Źródło entropii
+        std::mt19937 gen(rd());       // Generator Mersenne Twister
+        std::uniform_int_distribution<> dist(0, nodes.size()-1);
         for(int x = 0; x < this->m; x++){
-            int randomNumber = rand() % (nodes.size());
+            int randomNumber = dist(gen);
             ant_vector[x].reset(nodes[randomNumber]);
         }
 
         //mrówka robi trasę
         for (auto a: ant_vector) {
-            a.make_tour(nodes, this->feromon, this->alfa, this->beta);
-            for (int i = 0; i < a.tour.size() - 2; i++) {
-                matrix[a.tour[i]->get_value()][a.tour[i + 1]->get_value()] += this->q / a.tourLength;
+            a.make_tour(nodes, this->feromon, this->alfa, this->beta, config.PheromoneUpdateMethod, this->q);
+            vector<int> way = vector<int>();
+
+            for(auto p: a.tour) way.push_back(p->get_value());
+
+            int new_cost = a.tourLength;
+
+            if(new_cost < best_cost){
+                best_cost = new_cost;
+                best_way = way;
+            }
+
+            if(new_cost == optimum){
+                best_cost = new_cost;
+                best_way = way;
+                throw std::runtime_error("Znaleziono optimum");
+            }
+
+            if(new_cost - optimum <= (optimum * config.AntAcceptableDeviationFromOptimum)/100){
+                best_way = way;
+                best_cost = new_cost;
+                throw std::runtime_error("Wynik w granicach tolerancji odchylenia od wyniku optymalnego");
+            }
+
+            if(new_cost == last_cost){
+                this->noChangesStreak += 1;
+            } else{
+                this->noChangesStreak = 0;
+            }
+            this->last_cost = new_cost;
+
+            //powtórzenia bez zmian
+            if(this->noChangesStreak == config.TabuIterationsLimit){
+                throw std::runtime_error("osiągnięto limit pomiarów bez zmiany wyniku");
+            }
+
+            if(config.PheromoneUpdateMethod == "CAS"){
+                for (int i = 0; i < a.tour.size() - 2; i++) {
+                    matrix[a.tour[i]->get_value()][a.tour[i + 1]->get_value()] += this->q / a.tourLength;
+                }
+            }
+
+            if (std::chrono::duration_cast<std::chrono::minutes>(std::chrono::high_resolution_clock::now() - time).count() >=
+                config.maxTime) {
+                throw std::runtime_error("przekroczono limit czasowy");
             }
         }
 
+        //parowanie feromonu
         for (int z = 0; z < feromon.size(); z++) {
             for (int y = 0; y < feromon[z].size(); y++) {
                 feromon[z][y] = (1 - this->rho) * feromon[z][y];
                 if(feromon[z][y] <= 0){
                     feromon[z][y] = 1e-6;
                 }
-                feromon[z][y] += matrix[z][y];
+                if(config.PheromoneUpdateMethod == "CAS"){
+                    feromon[z][y] += matrix[z][y];
+                }
             }
         }
+
         for (auto& row : matrix) {
             fill(row.begin(), row.end(), 0.0);
         }
 
-        //wyświtlanie wyniku po iteracji
-        vector<int> way = vector<int>();
-        vector<bool> visited(nodes.size(), false);
-        visited[0] = true;
-        way.push_back(0);
-        while (way.size() < nodes.size()){
-            int current_node = way[way.size()-1];
-            int z = -1;
-            double y = 0;
-            for(int p = 0; p < nodes.size(); p++){
-                if(p != current_node and !visited[p]){
-                    if(feromon[current_node][p] > y){
-                        z = p;
-                        y = feromon[current_node][p];
-                    }
-                }
-            }
-            way.push_back(z);
-            visited[z] = true;
-        }
-        way.push_back(0);
-        for(auto p: way) cout << p << " ";
-        cout << " : " << v.calculate_value(nodes,way) << endl;
     }
-}
-
-void AntColonyOptimization::algorithm(vector<Node> nodes) {
-    this->ant_vector = vector<Ant>();
-    srand(time(nullptr));
-    for(int x = 0; x < this->m; x++){
-        int randomNumber = rand() % (nodes.size());
-        ant_vector.push_back(Ant(&nodes[randomNumber]));
-    }
-    this->feromon = std::vector<std::vector<double>>(nodes.size(), std::vector<double>(nodes.size(), 1e-6));
-    this->test_algorithm(nodes);
 }

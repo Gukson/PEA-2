@@ -30,17 +30,25 @@ void Config::loadConfig(string fileName) {
     showInConsole = data["measurement_results_in_the_console"];
 
     //SA
-    annealingAlfa = data["SimulatedAnnealingSettings"]["alfa"];
-    temperature =  data["SimulatedAnnealingSettings"]["start_temperature"];
-    min_temperature = data["SimulatedAnnealingSettings"]["min_temperature"];
-    way = data["SimulatedAnnealingSettings"]["choose_way_by"];
-    SAIterationsLimit = data["SimulatedAnnealingSettings"]["SAFinishAfterIterationsWithNoChanges"];
-    SAAcceptableDeviationFromOptimum = data["SimulatedAnnealingSettings"]["SAAcceptableDeviationFromOptimum"];
+    annealingAlfa = data["SimulatedAnnealing"]["alfa"];
+    temperature =  data["SimulatedAnnealing"]["start_temperature"];
+    min_temperature = data["SimulatedAnnealing"]["min_temperature"];
+    way = data["SimulatedAnnealing"]["choose_way_by"];
+    SAIterationsLimit = data["SimulatedAnnealing"]["FinishAfterIterationsWithNoChanges"];
+    SAAcceptableDeviationFromOptimum = data["SimulatedAnnealing"]["AcceptableDeviationFromOptimum"];
 
     //Tabu
-    TabuUpperLimit = data["TabuSearch"]["TabuUpperLimit"];
-    TabuIterationsLimit = data["TabuSearch"]["TabuFinishAfterIterationsWithNoChanges"];
-    TabuAcceptableDeviationFromOptimum = data["TabuSearch"]["TabuAcceptableDeviationFromOptimum"];
+    TabuUpperLimit = data["TabuSearch"]["UpperLimit"];
+    TabuIterationsLimit = data["TabuSearch"]["FinishAfterIterationsWithNoChanges"];
+    TabuAcceptableDeviationFromOptimum = data["TabuSearch"]["AcceptableDeviationFromOptimum"];
 
+    //Ant
+    PheromoneUpdateMethod = data["AntColonyOptimization"]["PheromoneUpdateMethod"];
+    AntAlfa = data["AntColonyOptimization"]["Alfa"];
+    AntBeta = data["AntColonyOptimization"]["Beta"];
+    AntRho = data["AntColonyOptimization"]["Rho"];
+    numberOfAnts = data["AntColonyOptimization"]["NumberOfAnts"];
+    initialAmountOfPheromone = data["AntColonyOptimization"]["InitialAmountOfPheromone"];
+    AntAcceptableDeviationFromOptimum = data["AntColonyOptimization"]["AcceptableDeviationFromOptimum"];
 }
 

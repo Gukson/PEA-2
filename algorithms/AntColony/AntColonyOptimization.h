@@ -10,21 +10,24 @@
 #include "../pomocnicze/ant/Ant.h"
 #include "../pomocnicze/valueCalculator/ValueCalculator.h"
 #include "../../config/configClass/Config.h"
-
+#include "../pomocnicze/statCalculator/statCalculator.h"
+#include <random>
+#include <chrono>
 using namespace std;
 
 class AntColonyOptimization : public AlgoFrame {
 public:
-    float alfa = 3;
-    float beta = 1;
-    float rho = 0.5;
-    float q = 100.0; //początkowa wartośc feromonu
-    int m; //ilość mrówek
-    int iterations; //ilość iteracji
-    vector<vector<double>> feromon;
-    vector<int> best_way = vector<int>();
-    int best_cost;
-    ValueCalculator v = ValueCalculator();
+    AntColonyOptimization(Config c, int opt){
+        this->config = c;
+        this->alfa = config.AntAlfa;
+        this->beta = config.AntBeta;
+        this->rho = config.AntRho;
+        this->q = config.initialAmountOfPheromone;
+        this->m = config.numberOfAnts;
+        this->optimum = opt;
+    }
+
+
 
 
     void algorithm(vector<Node> nodes) override;
@@ -32,6 +35,23 @@ public:
 
 private:
     vector<Ant> ant_vector;
+    Config config;
+    float alfa;
+    float beta;
+    float rho;
+    float q; //poczatkowa ilosc feromonu
+    int m; //ilość mrówek
+    int optimum;
+    vector<int> best_way = vector<int>();
+    int best_cost = INT16_MAX;
+    vector<vector<double>> feromon;
+    ValueCalculator v = ValueCalculator();
+
+    chrono::duration<double, std::milli> ms_double;
+    std::chrono::time_point<std::chrono::high_resolution_clock> time;
+
+    int noChangesStreak = 0;
+    int last_cost = INT16_MAX;
 };
 
 

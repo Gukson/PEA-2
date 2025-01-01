@@ -56,7 +56,6 @@ void SimulatedAnnealing::test_algorithm(vector<Node> nodes) {
     vector<double> relatives = vector<double>();
 
     for(int x = 0; x < config.repetitionsPerInstance; x++){
-
         n.nearestNeighbour(&nodes[0], nodes.size(),visited,0,&nodes[0],1);
         best_way = n.best_way; //to jest nasze początkowe minimum lokalne
         cost = n.result;

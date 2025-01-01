@@ -45,6 +45,15 @@ public:
     int TabuIterationsLimit;
     int TabuAcceptableDeviationFromOptimum;
 
+    //Ant
+    string PheromoneUpdateMethod;
+    float AntAlfa;
+    float AntBeta;
+    float AntRho;
+    int numberOfAnts;
+    float initialAmountOfPheromone;
+    int AntAcceptableDeviationFromOptimum;
+
 
 
 

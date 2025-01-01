@@ -10,18 +10,27 @@
     "SimulatedAnnealing": true,
     "AntColony": true
   },
-  "SimulatedAnnealingSettings": {
+  "SimulatedAnnealing": {
     "min_temperature": 10.0,
     "start_temperature": 100.0,
     "alfa": 0.995,
     "choose_way_by": "change",
-    "SAFinishAfterIterationsWithNoChanges": 5,
-    "SAAcceptableDeviationFromOptimum": 1
+    "FinishAfterIterationsWithNoChanges": 5,
+    "AcceptableDeviationFromOptimum": 1
   },
   "TabuSearch": {
-    "TabuUpperLimit": "nn",
-    "TabuFinishAfterIterationsWithNoChanges": 5,
-    "TabuAcceptableDeviationFromOptimum": 1
+    "UpperLimit": "nn",
+    "FinishAfterIterationsWithNoChanges": 5,
+    "AcceptableDeviationFromOptimum": 1
+  },
+  "AntColonyOptimization": {
+    "PheromoneUpdateMethod": "CAS",
+    "Alfa": 2.0,
+    "Beta": 2.0,
+    "Rho": 0.05,
+    "NumberOfAnts": 50,
+    "InitialAmountOfPheromone": 500.0,
+    "AcceptableDeviationFromOptimum": 1
   },
   "max_time": 1,
   "repetitions_per_instance": 5,

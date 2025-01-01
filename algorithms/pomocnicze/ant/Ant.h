@@ -33,7 +33,7 @@ public:
 
     };
 
-    void make_tour(vector<Node> nodes, vector<vector<double>> feromon, float alfa, float beta);
+    void make_tour(vector<Node> nodes, vector<vector<double>>& feromon, float alfa, float beta, string method, float q);
 };
 
 

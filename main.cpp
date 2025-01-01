@@ -16,13 +16,12 @@ int main() {
     Config c = Config();
     c.loadConfig("config.json");
 
-    TabuSearch t = TabuSearch(c, dataLoader.optimum);
-    t.test_algorithm(nodes);
+//    TabuSearch t = TabuSearch(c, dataLoader.optimum);
+//    t.test_algorithm(nodes);
 
-//    AntColonyOptimization ant = AntColonyOptimization();
-//    ant.m = 20;
-//    ant.iterations = 100;
-//    ant.algorithm(nodes);
+    AntColonyOptimization ant = AntColonyOptimization(c, dataLoader.optimum);
+    ant.test_algorithm(nodes);
+
 
 //    SimulatedAnnealing s = SimulatedAnnealing(c,dataLoader.optimum);
 //    s.test_algorithm(nodes);

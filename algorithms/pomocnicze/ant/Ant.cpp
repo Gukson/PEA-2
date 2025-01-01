@@ -5,7 +5,7 @@
 #include "Ant.h"
 
 
-void Ant::make_tour(vector<Node> nodes, vector<vector<double>> feromon, float alfa, float beta) {
+void Ant::make_tour(vector<Node> nodes, vector<vector<double>>& feromon, float alfa, float beta, string method, float q) {
     this->tourLength = 0;
     while(true) {
         Node *current_Node = tour[tour.size() - 1];
@@ -47,6 +47,8 @@ void Ant::make_tour(vector<Node> nodes, vector<vector<double>> feromon, float al
 //            cout << o.first->get_value() << " : " << o.second << endl;
         }
 
+
+        //Wybieranie trasy na podsatwei prawdopodobieństwa
         random_device rd; // Źródło entropii
         mt19937 gen(rd()); // Generator liczb losowych
         uniform_real_distribution<> dist(0.0, 1.0); // Rozkład jednostajny
@@ -60,17 +62,25 @@ void Ant::make_tour(vector<Node> nodes, vector<vector<double>> feromon, float al
                 for(auto i: current_Node->getVectorOfNodes()){
                     if(i.first->get_value() == o.first->get_value()){
                         this->tourLength += i.second;
+                        if(method == "DAS"){
+                            feromon[current_Node->get_value()][o.first->get_value()] += q/float(i.second);
+                        }
                         break;
                     }
                 }
+
+                if(method == "QAS"){
+                    feromon[current_Node->get_value()][o.first->get_value()] += q/float(tourLength);
+                }
+
                 break;
             }
         }
     }
-    Node current_Node = nodes[tour.size() - 1];
+    Node current_Node = nodes[tour[tour.size()-1]->get_value()];
     for(auto n: current_Node.getVectorOfNodes()){
         if(n.first->get_value() == this->tour[0]->get_value()){
-            this->tour.push_back(n.first);
+            this->tour.push_back(tour[0]);
             this->tourLength += n.second;
         }
     }
