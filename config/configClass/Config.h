@@ -39,6 +39,8 @@ public:
     string way;
     int SAIterationsLimit;
     int SAAcceptableDeviationFromOptimum;
+    string coolingType;
+    float SAc;
 
     //Tabu
     string TabuUpperLimit;

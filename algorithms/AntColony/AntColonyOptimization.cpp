@@ -13,14 +13,14 @@ void AntColonyOptimization::test_algorithm(vector<Node> nodes) {
     for(int x = 0; x < config.repetitionsPerInstance; x++){
         this->best_way.clear();
         this->best_cost = INT16_MAX;
-        this->feromon = std::vector<std::vector<double>>(nodes.size(), std::vector<double>(nodes.size(), 1e-6));
+        this->feromon = std::vector<std::vector<double>>(nodes.size(), std::vector<double>(nodes.size(), 1));
         this->ant_vector = vector<Ant>();
         std::random_device rd;        // Źródło entropii
         std::mt19937 gen(rd());       // Generator Mersenne Twister
         std::uniform_int_distribution<> dist(0, nodes.size()-1);
         for(int x = 0; x < this->m; x++){
             int randomNumber = dist(gen);
-            ant_vector.push_back(Ant(&nodes[randomNumber]));
+            ant_vector.push_back(Ant(&nodes[randomNumber],config.maxTime));
         }
         auto start = chrono::high_resolution_clock::now();
         time = start;
@@ -33,11 +33,15 @@ void AntColonyOptimization::test_algorithm(vector<Node> nodes) {
         auto finish = chrono::high_resolution_clock::now();
         ms_double = finish - start;
         timeMeasurements.push_back(ms_double.count() / 1000);
+        if (this->overTime) break;
     }
 
 
     statCalculator s = statCalculator();
     vector<double> stats = s.calcStats(timeMeasurements,absolutes,relatives);
+    ofstream outputFile;
+    outputFile.open("../data/output/" + config.outputFile, std::ios_base::app);
+    outputFile << config.PheromoneUpdateMethod << " : alfa -  " << config.AntAlfa << " : Beta -" << config.AntBeta << " : Q - " << q << endl;
     s.statsOutput(stats,timeMeasurements,absolutes,relatives,best_way,best_cost,config.showInConsole,optimum,config.outputFile, "Ant");
 }
 
@@ -55,7 +59,14 @@ void AntColonyOptimization::algorithm(vector<Node> nodes) {
 
         //mrówka robi trasę
         for (auto a: ant_vector) {
-            a.make_tour(nodes, this->feromon, this->alfa, this->beta, config.PheromoneUpdateMethod, this->q);
+            try {
+                a.time = this->time;
+                a.make_tour(nodes, this->feromon, this->alfa, this->beta, config.PheromoneUpdateMethod, this->q);
+            } catch (const std::runtime_error &e) {
+                this->overTime = true;
+                throw std::runtime_error("przekroczono limit czasowy");
+            }
+
             vector<int> way = vector<int>();
 
             for(auto p: a.tour) way.push_back(p->get_value());
@@ -99,6 +110,7 @@ void AntColonyOptimization::algorithm(vector<Node> nodes) {
 
             if (std::chrono::duration_cast<std::chrono::minutes>(std::chrono::high_resolution_clock::now() - time).count() >=
                 config.maxTime) {
+                this->overTime = true;
                 throw std::runtime_error("przekroczono limit czasowy");
             }
         }

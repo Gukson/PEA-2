@@ -44,6 +44,7 @@ private:
     int noChangesStreak = 0;
     int last_cost;
     int optimum;
+    bool overTime = false;
 };
 
 

@@ -7,6 +7,10 @@ void NearestNeighbour::nearestNeighbour(Node *start, int size, vector<Node*> vis
     visited.push_back(con);
     Node* current_Node = con;
     while (count != size){
+        if (std::chrono::duration_cast<std::chrono::minutes>(std::chrono::high_resolution_clock::now() - time).count() >=
+            max_time) {
+            throw std::runtime_error("przekroczono limit czasowy");
+        }
         vector<pair<Node*, int>> nodes = current_Node->getVectorOfNodes();
         usunWspolne(nodes,visited);
 

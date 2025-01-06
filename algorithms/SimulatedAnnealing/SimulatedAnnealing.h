@@ -12,6 +12,7 @@
 #include "../pomocnicze/statCalculator/statCalculator.h"
 #include <vector>
 #include <random>
+#include <cmath>
 #include <chrono>
 class SimulatedAnnealing : public AlgoFrame  {
 public:
@@ -19,9 +20,12 @@ public:
         config = c;
         this->alfa = c.annealingAlfa;
         this->temperature = c.temperature;
+        this->start_temperature = c.temperature;
         this->min_temperature = c.min_temperature;
         this->choose_way_by = c.way;
         this->optimum = opt;
+        this->C = config.SAc;
+
     }
 
     void algorithm(vector<Node> nodes) override;
@@ -36,12 +40,15 @@ private:
 
     int optimum;
     float alfa;
+    float start_temperature;
     float temperature;
     float min_temperature;
     string choose_way_by;
+    bool overTime = false;
 
     int noChangesStreak = 0;
     int last_cost;
+    float C;
 
 private:
     vector<int> swap_random_cities(vector<int> actual_order);

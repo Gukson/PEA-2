@@ -9,6 +9,7 @@
 #include <vector>
 #include <cmath>
 #include <random>
+#include <chrono>
 #include "../../../Tree/Node/Node.h"
 #include "../../pomocnicze/usun_wpolne/usunWspolne.h"
 using namespace std;
@@ -18,11 +19,14 @@ public:
     vector<Node *> tour;
     Node *startNode;
     int tourLength;
+    std::chrono::time_point<std::chrono::high_resolution_clock> time;
+    int max_time;
 
     // Konstruktor:
-    Ant(Node *start) {
+    Ant(Node *start, int t) {
         startNode = start;
         tour.push_back(start);
+        max_time = t;
     }
 
     // Resetowanie stanu mrówki:

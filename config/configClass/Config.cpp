@@ -18,7 +18,6 @@ void Config::openJSON(string filename) {
 void Config::loadConfig(string fileName) {
     openJSON(fileName);
 
-
     for(int x = 0; x < data["files"].size(); x++){
         files.push_back(data["files"][x]["file_name"]);
     }
@@ -36,6 +35,8 @@ void Config::loadConfig(string fileName) {
     way = data["SimulatedAnnealing"]["choose_way_by"];
     SAIterationsLimit = data["SimulatedAnnealing"]["FinishAfterIterationsWithNoChanges"];
     SAAcceptableDeviationFromOptimum = data["SimulatedAnnealing"]["AcceptableDeviationFromOptimum"];
+    coolingType = data["SimulatedAnnealing"]["coolingType"];
+    SAc = data["SimulatedAnnealing"]["C"];
 
     //Tabu
     TabuUpperLimit = data["TabuSearch"]["UpperLimit"];

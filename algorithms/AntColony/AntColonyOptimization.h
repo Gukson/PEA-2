@@ -28,8 +28,6 @@ public:
     }
 
 
-
-
     void algorithm(vector<Node> nodes) override;
     void test_algorithm(vector<Node> nodes) override;
 
@@ -42,6 +40,7 @@ private:
     float q; //poczatkowa ilosc feromonu
     int m; //ilość mrówek
     int optimum;
+    bool overTime = false;
     vector<int> best_way = vector<int>();
     int best_cost = INT16_MAX;
     vector<vector<double>> feromon;
@@ -49,6 +48,8 @@ private:
 
     chrono::duration<double, std::milli> ms_double;
     std::chrono::time_point<std::chrono::high_resolution_clock> time;
+
+
 
     int noChangesStreak = 0;
     int last_cost = INT16_MAX;

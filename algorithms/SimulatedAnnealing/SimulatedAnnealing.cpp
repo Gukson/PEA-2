@@ -5,7 +5,9 @@
 #include "SimulatedAnnealing.h"
 
 void SimulatedAnnealing::algorithm(vector<Node> nodes) {
+    int k = 0;
     while(temperature > min_temperature){
+        k++;
         vector<int> new_way = vector<int>();
         if(this->choose_way_by == "change") new_way = change_order(best_way);
         else new_way = swap_random_cities(best_way);
@@ -17,6 +19,7 @@ void SimulatedAnnealing::algorithm(vector<Node> nodes) {
             //przekroczenie limitu czasu
             if (std::chrono::duration_cast<std::chrono::minutes>(std::chrono::high_resolution_clock::now() - time).count() >=
                 config.maxTime) {
+                this->overTime = true;
                 throw std::runtime_error("przekroczono limit czasowy");
             }
 
@@ -30,7 +33,6 @@ void SimulatedAnnealing::algorithm(vector<Node> nodes) {
             if(new_cost < cost){
                 cost = new_cost;
                 best_way = new_way;
-
             }
             if(new_cost == last_cost){
                 this->noChangesStreak += 1;
@@ -44,7 +46,11 @@ void SimulatedAnnealing::algorithm(vector<Node> nodes) {
                 throw std::runtime_error("osiągnięto limit pomiarów bez zmiany wyniku");
             }
         }
-        temperature *= alfa;
+        if(config.coolingType == "geo"){
+            temperature *= alfa;
+        } else{
+            temperature = start_temperature / (1 + C * log(1+k));
+        }
     }
 }
 
@@ -56,13 +62,15 @@ void SimulatedAnnealing::test_algorithm(vector<Node> nodes) {
     vector<double> relatives = vector<double>();
 
     for(int x = 0; x < config.repetitionsPerInstance; x++){
-        n.nearestNeighbour(&nodes[0], nodes.size(),visited,0,&nodes[0],1);
-        best_way = n.best_way; //to jest nasze początkowe minimum lokalne
-        cost = n.result;
+
         auto start = chrono::high_resolution_clock::now();
         time = start;
-        last_cost = cost;
+        n.time = start;
         try {
+            n.nearestNeighbour(&nodes[0], nodes.size(),visited,0,&nodes[0],1);
+            best_way = n.best_way; //to jest nasze początkowe minimum lokalne
+            cost = n.result;
+            last_cost = cost;
             algorithm(nodes);
         } catch (const std::runtime_error &e) {
             std::cerr << "Błąd: " << e.what() << std::endl;
@@ -71,10 +79,19 @@ void SimulatedAnnealing::test_algorithm(vector<Node> nodes) {
         auto finish = chrono::high_resolution_clock::now();
         ms_double = finish - start;
         timeMeasurements.push_back(ms_double.count() / 1000);
+        if(this->overTime)break;
 
     }
     statCalculator s = statCalculator();
     vector<double> stats = s.calcStats(timeMeasurements,absolutes,relatives);
+    ofstream outputFile;
+    outputFile.open("../data/output/" + config.outputFile, std::ios_base::app);
+    if(config.coolingType == "geo"){
+        outputFile << config.coolingType << " : " << alfa << " way: " << choose_way_by <<  endl;
+    } else{
+        outputFile << config.coolingType << " : " << C << " way: " << choose_way_by <<  endl;
+    }
+
     s.statsOutput(stats,timeMeasurements,absolutes,relatives,best_way,cost,config.showInConsole,optimum,config.outputFile, "SimulatedAnnealing");
 
 }

@@ -27,9 +27,11 @@ void TabuSearch::algorithm(vector<Node> nodes) {
                     candidates.push_back(make_tuple(newRoute,value, make_pair(j,k)));
                 }
 
+
                 //sprawdzanie, czy nie przekroczono czasu
                 if (std::chrono::duration_cast<std::chrono::minutes>(std::chrono::high_resolution_clock::now() - time).count() >=
                     config.maxTime) {
+                    this->overTime = true;
                     throw std::runtime_error("przekroczono limit czasowy");
                 }
             }
@@ -63,24 +65,15 @@ void TabuSearch::algorithm(vector<Node> nodes) {
             throw std::runtime_error("osiągnięto limit pomiarów bez zmiany wyniku");
         }
 
-
-
-
     }
 }
 
 void TabuSearch::test_algorithm(vector<Node> nodes) {
     vector<Node*> visited = vector<Node*>();
 
-    if(config.TabuUpperLimit == "nn"){
-        NearestNeighbour n = NearestNeighbour();
-        n.nearestNeighbour(&nodes[0], nodes.size(),visited,0,&nodes[0],1);
-        best_way = n.best_way; //to jest nasze początkowe minimum lokalne
-        cost = n.result;
-    } else{
-        best_way = GenerateRandomWay(nodes);
-        cost = v.calculate_value(nodes,best_way);
-    }
+
+
+    cout << "poszedł algos" << endl;
 
     //założenia dla długości listy Tabu:
     //Dla N < 50 -> N*0.2
@@ -100,6 +93,16 @@ void TabuSearch::test_algorithm(vector<Node> nodes) {
         auto start = chrono::high_resolution_clock::now();
         time = start;
         try {
+            if(config.TabuUpperLimit == "nn"){
+                NearestNeighbour n = NearestNeighbour();
+                n.time = start;
+                n.nearestNeighbour(&nodes[0], nodes.size(),visited,0,&nodes[0],1);
+                best_way = n.best_way; //to jest nasze początkowe minimum lokalne
+                cost = n.result;
+            } else{
+                best_way = GenerateRandomWay(nodes);
+                cost = v.calculate_value(nodes,best_way);
+            }
             algorithm(nodes);
         } catch (const std::runtime_error &e) {
             std::cerr << "Błąd: " << e.what() << std::endl;
@@ -108,11 +111,14 @@ void TabuSearch::test_algorithm(vector<Node> nodes) {
         auto finish = chrono::high_resolution_clock::now();
         ms_double = finish - start;
         timeMeasurements.push_back(ms_double.count() / 1000);
+        if(this->overTime)break;
     }
-
 
     statCalculator s = statCalculator();
     vector<double> stats = s.calcStats(timeMeasurements,absolutes,relatives);
+    ofstream outputFile;
+    outputFile.open("../data/output/" + config.outputFile, std::ios_base::app);
+    outputFile << config.TabuUpperLimit << endl;
     s.statsOutput(stats,timeMeasurements,absolutes,relatives,best_way,cost,config.showInConsole,optimum,config.outputFile, "TabuSearch");
 }
 

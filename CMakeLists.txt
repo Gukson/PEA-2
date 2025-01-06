@@ -26,4 +26,6 @@ add_executable(PEA_2 main.cpp
         algorithms/SimulatedAnnealing/SimulatedAnnealing.h
         config/configClass/Config.cpp
         algorithms/pomocnicze/statCalculator/statCalculator.cpp
-        algorithms/pomocnicze/statCalculator/statCalculator.h)
+        algorithms/pomocnicze/statCalculator/statCalculator.h
+        tester/Tester.cpp
+        tester/Tester.h)
