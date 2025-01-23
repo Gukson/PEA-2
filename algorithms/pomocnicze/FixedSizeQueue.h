@@ -56,4 +56,6 @@ public:
     bool contains(const T& value) const {
         return std::find(queue.begin(), queue.end(), value) != queue.end();
     }
+
+
 };

@@ -29,6 +29,14 @@ public:
         max_time = t;
     }
 
+    vector<int> getTourValues() const {
+        vector<int> values;
+        for (auto node : tour) {
+            values.push_back(node->get_value()); // Zakładamy, że Node ma metodę get_value()
+        }
+        return values;
+    }
+
     // Resetowanie stanu mrówki:
     void reset(Node startCity) {
         this->tour.clear();       // Czyszczenie trasy
@@ -37,7 +45,7 @@ public:
 
     };
 
-    void make_tour(vector<Node> nodes, vector<vector<double>>& feromon, float alfa, float beta, string method, float q);
+    void make_tour(vector<Node> nodes, vector<vector<double>> &feromon, float alfa, float beta, string method, float q);
 };
 
 

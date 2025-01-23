@@ -7,16 +7,21 @@
 
 #include <iostream>
 #include <vector>
+#include <vector>
+#include <queue>
+#include <limits>
 
 using namespace std;
 class Node {
 public:
     int get_value();
     vector<pair<Node*,int>> getVectorOfNodes();
+    pair<vector<pair<Node*, Node*>>, int> primAlgorithm(vector<Node>& graph);
     void addNodeToVector(Node *n, int v);
 
-
     void set_value(int v);
+
+    explicit Node();
     explicit Node(int val){
         value = val;
         vectorOfNodes = vector<pair<Node*,int>>();

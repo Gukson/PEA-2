@@ -10,6 +10,7 @@
 #include "../NearestNeighbour/NearestNeighbour.h"
 #include "../../config/configClass/Config.h"
 #include "../pomocnicze/statCalculator/statCalculator.h"
+#include "../pomocnicze/usun_wpolne/usunWspolne.h"
 #include <vector>
 #include <random>
 #include <cmath>
@@ -37,7 +38,7 @@ private:
     chrono::duration<double, std::milli> ms_double;
     std::chrono::time_point<std::chrono::high_resolution_clock> time;
     vector<int> best_way;
-
+    int lb;
     int optimum;
     float alfa;
     float start_temperature;
@@ -53,6 +54,7 @@ private:
 private:
     vector<int> swap_random_cities(vector<int> actual_order);
     vector<int> change_order(vector<int> actual_order);
+    vector<int> GenerateRandomWay(vector<Node> nodes);
 
 };
 

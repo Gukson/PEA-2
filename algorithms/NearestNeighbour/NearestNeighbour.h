@@ -16,7 +16,7 @@ using namespace std;
 
 class NearestNeighbour {
 public:
-    int result = INT16_MAX;
+    int result = INT32_MAX;
 
     vector<int> best_way = vector<int>();
     void nearestNeighbour(Node *start, int size, vector<Node*> visited, int actualCost,Node *con,int c);

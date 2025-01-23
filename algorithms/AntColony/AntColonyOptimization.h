@@ -10,6 +10,7 @@
 #include "../pomocnicze/ant/Ant.h"
 #include "../pomocnicze/valueCalculator/ValueCalculator.h"
 #include "../../config/configClass/Config.h"
+#include "../pomocnicze/usun_wpolne/usunWspolne.h"
 #include "../pomocnicze/statCalculator/statCalculator.h"
 #include <random>
 #include <chrono>
@@ -32,6 +33,7 @@ public:
     void test_algorithm(vector<Node> nodes) override;
 
 private:
+    int lb;
     vector<Ant> ant_vector;
     Config config;
     float alfa;
@@ -42,7 +44,7 @@ private:
     int optimum;
     bool overTime = false;
     vector<int> best_way = vector<int>();
-    int best_cost = INT16_MAX;
+    int best_cost = INT32_MAX;
     vector<vector<double>> feromon;
     ValueCalculator v = ValueCalculator();
 

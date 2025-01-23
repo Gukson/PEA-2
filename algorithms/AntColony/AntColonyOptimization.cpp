@@ -9,12 +9,14 @@ void AntColonyOptimization::test_algorithm(vector<Node> nodes) {
     vector<double> timeMeasurements = vector<double>();
     vector<double> absolutes = vector<double>();
     vector<double> relatives = vector<double>();
+    vector<int> results = vector<int>();
 
     for(int x = 0; x < config.repetitionsPerInstance; x++){
         this->best_way.clear();
-        this->best_cost = INT16_MAX;
+        this->best_cost = INT32_MAX;
         this->feromon = std::vector<std::vector<double>>(nodes.size(), std::vector<double>(nodes.size(), 1));
         this->ant_vector = vector<Ant>();
+        this->noChangesStreak = 0;
         std::random_device rd;        // Źródło entropii
         std::mt19937 gen(rd());       // Generator Mersenne Twister
         std::uniform_int_distribution<> dist(0, nodes.size()-1);
@@ -25,6 +27,7 @@ void AntColonyOptimization::test_algorithm(vector<Node> nodes) {
         auto start = chrono::high_resolution_clock::now();
         time = start;
         try {
+            lb = primAlgorithm(nodes);
             algorithm(nodes);
         } catch (const std::runtime_error &e) {
             std::cerr << "Błąd: " << e.what() << std::endl;
@@ -33,104 +36,119 @@ void AntColonyOptimization::test_algorithm(vector<Node> nodes) {
         auto finish = chrono::high_resolution_clock::now();
         ms_double = finish - start;
         timeMeasurements.push_back(ms_double.count() / 1000);
+        results.push_back(best_cost);
         if (this->overTime) break;
     }
+
+    int temp = 0;
+    for (auto x : results) {
+        temp += x;
+    }
+    temp /= results.size();
 
 
     statCalculator s = statCalculator();
     vector<double> stats = s.calcStats(timeMeasurements,absolutes,relatives);
-    ofstream outputFile;
-    outputFile.open("../data/output/" + config.outputFile, std::ios_base::app);
-    outputFile << config.PheromoneUpdateMethod << " : alfa -  " << config.AntAlfa << " : Beta -" << config.AntBeta << " : Q - " << q << endl;
-    s.statsOutput(stats,timeMeasurements,absolutes,relatives,best_way,best_cost,config.showInConsole,optimum,config.outputFile, "Ant");
+    string info = config.PheromoneUpdateMethod +
+                     " : alfa - " + std::to_string(config.AntAlfa) +
+                     " : Beta - " + std::to_string(config.AntBeta) +
+                     " : Q - " + std::to_string(q);
+    s.statsOutput(stats,timeMeasurements,absolutes,relatives,best_way,temp,config.showInConsole,optimum,config.outputFile, "Ant", info);
 }
 
 void AntColonyOptimization::algorithm(vector<Node> nodes) {
-    vector<vector<double>> matrix(nodes.size(), vector<double>(nodes.size(),0));
+    vector<vector<double>> matrix(nodes.size(), vector<double>(nodes.size(), 0));
+    int iteration = 0;
 
     while (true) {
-        std::random_device rd;        // Źródło entropii
-        std::mt19937 gen(rd());       // Generator Mersenne Twister
-        std::uniform_int_distribution<> dist(0, nodes.size()-1);
-        for(int x = 0; x < this->m; x++){
-            int randomNumber = dist(gen);
-            ant_vector[x].reset(nodes[randomNumber]);
+        // Resetowanie mrówek
+        for (int x = 0; x < this->m; x++) {
+            ant_vector[x].reset(nodes[x % nodes.size()]); // Rotacja zamiast losowania
         }
+        int new_cost = 0;
+        // Iteracja dla każdej mrówki
+        for (auto& a : ant_vector) {
+            a.time = this->time;
 
-        //mrówka robi trasę
-        for (auto a: ant_vector) {
             try {
-                a.time = this->time;
                 a.make_tour(nodes, this->feromon, this->alfa, this->beta, config.PheromoneUpdateMethod, this->q);
-            } catch (const std::runtime_error &e) {
+            } catch (const std::runtime_error& e) {
                 this->overTime = true;
                 throw std::runtime_error("przekroczono limit czasowy");
             }
 
-            vector<int> way = vector<int>();
+            // Sprawdzanie najlepszej trasy
+            new_cost = a.tourLength;
 
-            for(auto p: a.tour) way.push_back(p->get_value());
-
-            int new_cost = a.tourLength;
-
-            if(new_cost < best_cost){
+            if (new_cost < best_cost) {
                 best_cost = new_cost;
-                best_way = way;
+                best_way = a.getTourValues();
             }
 
-            if(new_cost == optimum){
+            // Warunek: znalezienie wyniku optymalnego
+            if (new_cost == optimum) {
                 best_cost = new_cost;
-                best_way = way;
+                best_way = a.getTourValues();
                 throw std::runtime_error("Znaleziono optimum");
             }
 
-            if(new_cost - optimum <= (optimum * config.AntAcceptableDeviationFromOptimum)/100){
-                best_way = way;
+            // Warunek: wynik w granicach tolerancji od wyniku optymalnego
+            if (new_cost - optimum <= (lb * config.AntAcceptableDeviationFromOptimum) / 100) {
+                best_way = a.getTourValues();
                 best_cost = new_cost;
                 throw std::runtime_error("Wynik w granicach tolerancji odchylenia od wyniku optymalnego");
             }
 
-            if(new_cost == last_cost){
-                this->noChangesStreak += 1;
-            } else{
-                this->noChangesStreak = 0;
-            }
-            this->last_cost = new_cost;
 
-            //powtórzenia bez zmian
-            if(this->noChangesStreak == config.TabuIterationsLimit){
-                throw std::runtime_error("osiągnięto limit pomiarów bez zmiany wyniku");
-            }
-
-            if(config.PheromoneUpdateMethod == "CAS"){
-                for (int i = 0; i < a.tour.size() - 2; i++) {
-                    matrix[a.tour[i]->get_value()][a.tour[i + 1]->get_value()] += this->q / a.tourLength;
+            // Aktualizacja feromonów w metodzie CAS
+            if (config.PheromoneUpdateMethod == "CAS") {
+                for (int i = 0; i < a.tour.size() - 1; i++) {
+                    int from = a.tour[i]->get_value();
+                    int to = a.tour[i + 1]->get_value();
+                    matrix[from][to] += this->q / a.tourLength;
                 }
-            }
-
-            if (std::chrono::duration_cast<std::chrono::minutes>(std::chrono::high_resolution_clock::now() - time).count() >=
-                config.maxTime) {
-                this->overTime = true;
-                throw std::runtime_error("przekroczono limit czasowy");
             }
         }
+        // Sprawdzanie powtórzeń bez zmian
+        if (new_cost >= best_cost) {
+            this->noChangesStreak += 1;
+        } else {
+            this->noChangesStreak = 0;
+        }
 
-        //parowanie feromonu
+        // Warunek: osiągnięcie limitu iteracji bez poprawy wyniku
+        if (this->noChangesStreak >= config.TabuIterationsLimit) {
+            throw std::runtime_error("osiągnięto limit pomiarów bez zmiany wyniku");
+        }
+
+
+        iteration++;
+
+        // Parowanie i aktualizacja feromonów
         for (int z = 0; z < feromon.size(); z++) {
             for (int y = 0; y < feromon[z].size(); y++) {
-                feromon[z][y] = (1 - this->rho) * feromon[z][y];
-                if(feromon[z][y] <= 0){
-                    feromon[z][y] = 1e-6;
-                }
-                if(config.PheromoneUpdateMethod == "CAS"){
+                feromon[z][y] *= (1 - this->rho);
+                if (feromon[z][y] < 1e-6) feromon[z][y] = 1e-6;
+
+                if (config.PheromoneUpdateMethod == "CAS") {
                     feromon[z][y] += matrix[z][y];
                 }
             }
         }
 
-        for (auto& row : matrix) {
-            fill(row.begin(), row.end(), 0.0);
+        if (config.PheromoneUpdateMethod == "CAS") {
+            for (auto& row : matrix) {
+                fill(row.begin(), row.end(), 0.0);
+            }
         }
+
+        // Warunek: przekroczenie limitu czasu
+        if (std::chrono::duration_cast<std::chrono::minutes>(
+                std::chrono::high_resolution_clock::now() - time).count() >= config.maxTime) {
+            this->overTime = true;
+            throw std::runtime_error("przekroczono limit czasowy");
+        }
+
 
     }
 }

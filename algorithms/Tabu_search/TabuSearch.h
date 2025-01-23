@@ -34,17 +34,22 @@ private:
     ValueCalculator v;  // Zmienna v (ValueCalculator)
     vector<int> twoOptSwap(vector<int>& route, int i, int k);
     vector<int> GenerateRandomWay(vector<Node> nodes);
+    int calculateDelta(const vector<Node>& nodes, const vector<int>& oldRoute, const vector<int>& newRoute, int i, int k);
+    int calculateDiversity(const vector<int>& route1, const vector<int>& route2);
 
     chrono::duration<double, std::milli> ms_double;
     std::chrono::time_point<std::chrono::high_resolution_clock> time;
 
     Config config;
     int cost;
+    double tolerance = 0.1; // 10%
     int tabu_size = 0;
     int noChangesStreak = 0;
     int last_cost;
     int optimum;
     bool overTime = false;
+    int repeat = 0;
+    int lb;
 };
 
 

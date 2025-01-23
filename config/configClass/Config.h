@@ -41,11 +41,13 @@ public:
     int SAAcceptableDeviationFromOptimum;
     string coolingType;
     float SAc;
+    string SAUpperLimit;
 
     //Tabu
     string TabuUpperLimit;
     int TabuIterationsLimit;
     int TabuAcceptableDeviationFromOptimum;
+    string Tabuchange_way_by;
 
     //Ant
     string PheromoneUpdateMethod;

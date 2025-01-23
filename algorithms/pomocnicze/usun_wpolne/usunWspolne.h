@@ -13,5 +13,6 @@
 using namespace std;
 
 void usunWspolne(vector<pair<Node*,int>>& A, vector<Node*>& B);
+int primAlgorithm(vector<Node>& graph);
 
 #endif //PEA_USUNWSPOLNE_H

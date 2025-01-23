@@ -1,25 +1,7 @@
 {
   "files": [
     {
-      "file_name": "data34a.txt"
-    },
-    {
-      "file_name": "data65a.txt"
-    },
-    {
-      "file_name": "data100a.txt"
-    },
-    {
-      "file_name": "data140a.txt"
-    },
-    {
-      "file_name": "data171a.txt"
-    },
-    {
-      "file_name": "data200a.txt"
-    },
-    {
-      "file_name": "gr120.txt"
+      "file_name": "file_14s.txt"
     }
   ],
   "algorithms":
@@ -33,28 +15,30 @@
     "start_temperature": 100.0,
     "alfa": 0.995,
     "choose_way_by": "swap",
-    "FinishAfterIterationsWithNoChanges": 10,
-    "AcceptableDeviationFromOptimum": 0,
+    "FinishAfterIterationsWithNoChanges": 20,
+    "AcceptableDeviationFromOptimum": 5,
     "coolingType": "geo",
-    "C": 0.01
+    "C": 0.01,
+    "UpperLimit": "losowy"
   },
   "TabuSearch": {
     "UpperLimit": "losowy",
-    "FinishAfterIterationsWithNoChanges": 5,
-    "AcceptableDeviationFromOptimum": 2
+    "choose_way_by": "swap",
+    "FinishAfterIterationsWithNoChanges": 10,
+    "AcceptableDeviationFromOptimum": 10
   },
   "AntColonyOptimization": {
-    "PheromoneUpdateMethod": "CAS",
+    "PheromoneUpdateMethod": "QAS",
     "Alfa": 1.0,
-    "Beta": 2.0,
-    "Rho": 0.05,
-    "NumberOfAnts": 50,
+    "Beta": 3.0,
+    "Rho": 0.5,
+    "NumberOfAnts": 100,
     "InitialAmountOfPheromone": 500.0,
-    "AcceptableDeviationFromOptimum": 1
+    "AcceptableDeviationFromOptimum": 5
   },
   "max_time": 15,
   "repetitions_per_instance": 5,
-  "output_file": "pierwsze_reight.txt",
+  "output_file": "test123.txt",
   "progress_bar": true,
   "show_nodes_in_console": false,
   "measurement_results_in_the_console" : true

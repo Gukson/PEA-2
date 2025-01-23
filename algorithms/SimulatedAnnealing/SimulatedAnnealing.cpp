@@ -24,9 +24,15 @@ void SimulatedAnnealing::algorithm(vector<Node> nodes) {
             }
 
             //zatrzymujemy algorytm, gdy znajdziemy wartość optymalną
-            if (cost == optimum) throw std::runtime_error("znaleziono optimum");
+            if (new_cost == optimum) {
+                cost = new_cost;
+                best_way = new_way;
+                throw std::runtime_error("znaleziono optimum");
+            }
 
-            if(cost - optimum <= (optimum * config.SAAcceptableDeviationFromOptimum)/100.0) {
+            if(new_cost - optimum <= (lb * config.SAAcceptableDeviationFromOptimum)/100.0) {
+                cost = new_cost;
+                best_way = new_way;
                 throw std::runtime_error("Wynik w granicach tolerancji odchylenia od wyniku optymalnego");
             }
 
@@ -34,7 +40,7 @@ void SimulatedAnnealing::algorithm(vector<Node> nodes) {
                 cost = new_cost;
                 best_way = new_way;
             }
-            if(new_cost == last_cost){
+            if(new_cost > cost){
                 this->noChangesStreak += 1;
             } else{
                 this->noChangesStreak = 0;
@@ -49,7 +55,7 @@ void SimulatedAnnealing::algorithm(vector<Node> nodes) {
         if(config.coolingType == "geo"){
             temperature *= alfa;
         } else{
-            temperature = start_temperature / (1 + C * log(1+k));
+            temperature = start_temperature / log(1+k);
         }
     }
 }
@@ -60,6 +66,7 @@ void SimulatedAnnealing::test_algorithm(vector<Node> nodes) {
     vector<double> timeMeasurements = vector<double>();
     vector<double> absolutes = vector<double>();
     vector<double> relatives = vector<double>();
+    vector<int> results = vector<int>();
 
     for(int x = 0; x < config.repetitionsPerInstance; x++){
 
@@ -67,10 +74,16 @@ void SimulatedAnnealing::test_algorithm(vector<Node> nodes) {
         time = start;
         n.time = start;
         try {
-            n.nearestNeighbour(&nodes[0], nodes.size(),visited,0,&nodes[0],1);
-            best_way = n.best_way; //to jest nasze początkowe minimum lokalne
-            cost = n.result;
+            if (config.SAUpperLimit == "nn") {n.nearestNeighbour(&nodes[0], nodes.size(),visited,0,&nodes[0],1);
+                best_way = n.best_way; //to jest nasze początkowe minimum lokalne
+                cost = n.result;}
+            else {
+                best_way = GenerateRandomWay(nodes);
+                cost = v.calculate_value(nodes,best_way);
+            }
+
             last_cost = cost;
+            lb = primAlgorithm(nodes);
             algorithm(nodes);
         } catch (const std::runtime_error &e) {
             std::cerr << "Błąd: " << e.what() << std::endl;
@@ -79,20 +92,21 @@ void SimulatedAnnealing::test_algorithm(vector<Node> nodes) {
         auto finish = chrono::high_resolution_clock::now();
         ms_double = finish - start;
         timeMeasurements.push_back(ms_double.count() / 1000);
+        results.push_back(cost);
         if(this->overTime)break;
-
     }
+
+    int temp = 0;
+    for (auto x : results) {
+        temp += x;
+    }
+    temp /= results.size();
     statCalculator s = statCalculator();
     vector<double> stats = s.calcStats(timeMeasurements,absolutes,relatives);
-    ofstream outputFile;
-    outputFile.open("../data/output/" + config.outputFile, std::ios_base::app);
-    if(config.coolingType == "geo"){
-        outputFile << config.coolingType << " : " << alfa << " way: " << choose_way_by <<  endl;
-    } else{
-        outputFile << config.coolingType << " : " << C << " way: " << choose_way_by <<  endl;
-    }
-
-    s.statsOutput(stats,timeMeasurements,absolutes,relatives,best_way,cost,config.showInConsole,optimum,config.outputFile, "SimulatedAnnealing");
+    string info = config.coolingType + " : " +
+                     (config.coolingType == "geo" ? std::to_string(alfa) : std::to_string(C)) +
+                     " way: " + choose_way_by + " upperLimit: " + config.SAUpperLimit;
+    s.statsOutput(stats,timeMeasurements,absolutes,relatives,best_way,temp,config.showInConsole,optimum,config.outputFile, "SimulatedAnnealing", info);
 
 }
 
@@ -124,4 +138,20 @@ vector<int> SimulatedAnnealing::change_order(vector<int> actual_order) {
     reverse(actual_order.begin()+ start_swap,actual_order.begin()+start_swap+length_swap);
     actual_order.push_back(actual_order[0]);
     return actual_order;
+
+}
+
+
+vector<int> SimulatedAnnealing::GenerateRandomWay(vector<Node> nodes){
+    random_device rd; // Źródło entropii
+    mt19937 gen(rd()); // Mersenne Twister z ziarna rd()
+    vector<int> nodes_int = vector<int>();
+    for(auto p: nodes){
+        nodes_int.push_back(p.get_value());
+    }
+
+    shuffle(nodes_int.begin(), nodes_int.end(), gen);
+    nodes_int.push_back(nodes_int[0]);
+
+    return nodes_int;
 }

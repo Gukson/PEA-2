@@ -27,6 +27,10 @@ void Config::loadConfig(string fileName) {
     progressBar = data["progress_bar"];
     showNodesInConsole = data["show_nodes_in_console"];
     showInConsole = data["measurement_results_in_the_console"];
+    AntColony = data["algorithms"]["AntColony"];
+    SimulatedAnnealing = data["algorithms"]["SimulatedAnnealing"];
+    TabuSearch = data["algorithms"]["TabuSearch"];
+
 
     //SA
     annealingAlfa = data["SimulatedAnnealing"]["alfa"];
@@ -37,11 +41,13 @@ void Config::loadConfig(string fileName) {
     SAAcceptableDeviationFromOptimum = data["SimulatedAnnealing"]["AcceptableDeviationFromOptimum"];
     coolingType = data["SimulatedAnnealing"]["coolingType"];
     SAc = data["SimulatedAnnealing"]["C"];
+    SAUpperLimit = data["SimulatedAnnealing"]["UpperLimit"];
 
     //Tabu
     TabuUpperLimit = data["TabuSearch"]["UpperLimit"];
     TabuIterationsLimit = data["TabuSearch"]["FinishAfterIterationsWithNoChanges"];
     TabuAcceptableDeviationFromOptimum = data["TabuSearch"]["AcceptableDeviationFromOptimum"];
+    Tabuchange_way_by = data["TabuSearch"]["choose_way_by"];
 
     //Ant
     PheromoneUpdateMethod = data["AntColonyOptimization"]["PheromoneUpdateMethod"];

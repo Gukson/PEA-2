@@ -45,7 +45,7 @@ void NearestNeighbour::nearestNeighbour(Node *start, int size, vector<Node*> vis
     if (flag) {
         visited.push_back(start);
         sum += current_Node->getVectorOfNodes()[x].second;
-        if(sum < result){
+        if(sum < result ){
             result = sum;
             best_way.clear();
             for(Node* n: visited) best_way.push_back(n->get_value());
@@ -61,7 +61,7 @@ void NearestNeighbour::findBestWay(vector<Node> nodes) {
         nearestNeighbour(&nodes[x], nodes.size(),visited,0,&nodes[x],1);
         best_scores.push_back(result);
         best_ways.push_back(best_way);
-        result = INT16_MAX;
+        result = INT32_MAX;
         best_way.clear();
     }
     auto min_it = std::min_element(best_scores.begin(), best_scores.end());

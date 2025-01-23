@@ -17,8 +17,5 @@ void Node::set_value(int v) {
 }
 
 void Node::addNodeToVector(Node* n, int v) {
-    vectorOfNodes.push_back(make_pair(n,v));
+    vectorOfNodes.emplace_back(n,v);
 }
-
-
-
